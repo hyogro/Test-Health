@@ -134,16 +134,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메인 페이지!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQ8-ZV-B8D">
-                                <rect key="frame" x="109" y="183" width="160" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메인 페이지!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQ8-ZV-B8D">
+                                <rect key="frame" x="108" y="183" width="160" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PBW-uK-nOz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTa-to-1rm">
+                                <rect key="frame" x="150" y="337" width="75" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="8Ed-wv-D85"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W5A-vG-Jp0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W5A-vG-Jp0" firstAttribute="trailing" secondItem="vQ8-ZV-B8D" secondAttribute="trailing" constant="107" id="70d-2j-pcX"/>
+                            <constraint firstItem="vQ8-ZV-B8D" firstAttribute="leading" secondItem="W5A-vG-Jp0" secondAttribute="leading" constant="108" id="7Fx-oD-CJW"/>
+                            <constraint firstItem="vQ8-ZV-B8D" firstAttribute="top" secondItem="W5A-vG-Jp0" secondAttribute="top" constant="183" id="N0T-1t-FOC"/>
+                            <constraint firstItem="W5A-vG-Jp0" firstAttribute="trailing" secondItem="WTa-to-1rm" secondAttribute="trailing" constant="150" id="ORp-tV-oZI"/>
+                            <constraint firstItem="WTa-to-1rm" firstAttribute="leading" secondItem="W5A-vG-Jp0" secondAttribute="leading" constant="150" id="ZiF-JR-FAU"/>
+                            <constraint firstItem="WTa-to-1rm" firstAttribute="top" secondItem="vQ8-ZV-B8D" secondAttribute="bottom" constant="114" id="fE2-Ju-h0n"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggt-Ev-Cvf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

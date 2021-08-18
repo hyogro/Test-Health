@@ -16,6 +16,8 @@
 		C6326B2C26CCCC96006257F3 /* SignupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B2B26CCCC96006257F3 /* SignupRequest.swift */; };
 		C6326B2F26CCE81E006257F3 /* Login_AccountDTO_REQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B2E26CCE81E006257F3 /* Login_AccountDTO_REQ.swift */; };
 		C6326B3126CCE84F006257F3 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B3026CCE84F006257F3 /* LoginRequest.swift */; };
+		C6326B3626CCFC49006257F3 /* darknight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6326B3526CCFC49006257F3 /* darknight.jpg */; };
+		C6326B3826CCFCB8006257F3 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = C6326B3726CCFCB8006257F3 /* apple.png */; };
 		C65C330826CB8E5800467983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C330726CB8E5800467983 /* AppDelegate.swift */; };
 		C65C330A26CB8E5800467983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C330926CB8E5800467983 /* SceneDelegate.swift */; };
 		C65C330F26CB8E5800467983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65C330D26CB8E5800467983 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 		C6326B2B26CCCC96006257F3 /* SignupRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequest.swift; sourceTree = "<group>"; };
 		C6326B2E26CCE81E006257F3 /* Login_AccountDTO_REQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_AccountDTO_REQ.swift; sourceTree = "<group>"; };
 		C6326B3026CCE84F006257F3 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		C6326B3526CCFC49006257F3 /* darknight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = darknight.jpg; sourceTree = "<group>"; };
+		C6326B3726CCFCB8006257F3 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
 		C65C330426CB8E5800467983 /* Practice-Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practice-Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65C330726CB8E5800467983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C65C330926CB8E5800467983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,8 +100,18 @@
 		C6326B3326CCFB5C006257F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C6326B3726CCFCB8006257F3 /* apple.png */,
+				C6326B3526CCFC49006257F3 /* darknight.jpg */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C6326B3426CCFBC5006257F3 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C65C331526CB8E5900467983 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		C65C32FB26CB8E5800467983 = {
@@ -119,6 +133,7 @@
 		C65C330626CB8E5800467983 /* Practice-Health */ = {
 			isa = PBXGroup;
 			children = (
+				C6326B3426CCFBC5006257F3 /* LaunchScreen */,
 				C6326B3326CCFB5C006257F3 /* Resources */,
 				C6326B3226CCFB0B006257F3 /* AccountController */,
 				C6326B2226CCC428006257F3 /*  DTO */,
@@ -127,7 +142,6 @@
 				C65C330D26CB8E5800467983 /* Main.storyboard */,
 				C6326B1A26CC84CB006257F3 /* MainViewController.swift */,
 				C65C331326CB8E5900467983 /* Assets.xcassets */,
-				C65C331526CB8E5900467983 /* LaunchScreen.storyboard */,
 				C65C331826CB8E5900467983 /* Info.plist */,
 				C65C331026CB8E5800467983 /* Practice_Health.xcdatamodeld */,
 			);
@@ -192,9 +206,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6326B3626CCFC49006257F3 /* darknight.jpg in Resources */,
 				C65C331726CB8E5900467983 /* LaunchScreen.storyboard in Resources */,
 				C65C331426CB8E5900467983 /* Assets.xcassets in Resources */,
 				C65C330F26CB8E5800467983 /* Main.storyboard in Resources */,
+				C6326B3826CCFCB8006257F3 /* apple.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
