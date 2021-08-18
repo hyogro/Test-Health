@@ -12,6 +12,10 @@
 		C6326B1D26CC84D8006257F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B1C26CC84D8006257F3 /* SignUpViewController.swift */; };
 		C6326B1F26CC84FF006257F3 /* FindIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B1E26CC84FF006257F3 /* FindIdViewController.swift */; };
 		C6326B2126CC852E006257F3 /* FindPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B2026CC852E006257F3 /* FindPwViewController.swift */; };
+		C6326B2526CCC502006257F3 /* Create_AccountDTO_REQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B2426CCC502006257F3 /* Create_AccountDTO_REQ.swift */; };
+		C6326B2C26CCCC96006257F3 /* SignupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B2B26CCCC96006257F3 /* SignupRequest.swift */; };
+		C6326B2F26CCE81E006257F3 /* Login_AccountDTO_REQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B2E26CCE81E006257F3 /* Login_AccountDTO_REQ.swift */; };
+		C6326B3126CCE84F006257F3 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B3026CCE84F006257F3 /* LoginRequest.swift */; };
 		C65C330826CB8E5800467983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C330726CB8E5800467983 /* AppDelegate.swift */; };
 		C65C330A26CB8E5800467983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C330926CB8E5800467983 /* SceneDelegate.swift */; };
 		C65C330F26CB8E5800467983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65C330D26CB8E5800467983 /* Main.storyboard */; };
@@ -26,6 +30,10 @@
 		C6326B1C26CC84D8006257F3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C6326B1E26CC84FF006257F3 /* FindIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdViewController.swift; sourceTree = "<group>"; };
 		C6326B2026CC852E006257F3 /* FindPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwViewController.swift; sourceTree = "<group>"; };
+		C6326B2426CCC502006257F3 /* Create_AccountDTO_REQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_AccountDTO_REQ.swift; sourceTree = "<group>"; };
+		C6326B2B26CCCC96006257F3 /* SignupRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequest.swift; sourceTree = "<group>"; };
+		C6326B2E26CCE81E006257F3 /* Login_AccountDTO_REQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_AccountDTO_REQ.swift; sourceTree = "<group>"; };
+		C6326B3026CCE84F006257F3 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		C65C330426CB8E5800467983 /* Practice-Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practice-Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65C330726CB8E5800467983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C65C330926CB8E5800467983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +55,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6326B2226CCC428006257F3 /*  DTO */ = {
+			isa = PBXGroup;
+			children = (
+				C6326B2D26CCE804006257F3 /* Login */,
+				C6326B2326CCC439006257F3 /* SignUp */,
+			);
+			path = " DTO";
+			sourceTree = "<group>";
+		};
+		C6326B2326CCC439006257F3 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				C6326B2426CCC502006257F3 /* Create_AccountDTO_REQ.swift */,
+				C6326B2B26CCCC96006257F3 /* SignupRequest.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		C6326B2D26CCE804006257F3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C6326B2E26CCE81E006257F3 /* Login_AccountDTO_REQ.swift */,
+				C6326B3026CCE84F006257F3 /* LoginRequest.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C6326B3226CCFB0B006257F3 /* AccountController */ = {
+			isa = PBXGroup;
+			children = (
+				C6326B2026CC852E006257F3 /* FindPwViewController.swift */,
+				C6326B1E26CC84FF006257F3 /* FindIdViewController.swift */,
+				C6326B1C26CC84D8006257F3 /* SignUpViewController.swift */,
+				C6326B1826CC8189006257F3 /* LoginViewController.swift */,
+			);
+			path = AccountController;
+			sourceTree = "<group>";
+		};
+		C6326B3326CCFB5C006257F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C65C32FB26CB8E5800467983 = {
 			isa = PBXGroup;
 			children = (
@@ -66,14 +119,13 @@
 		C65C330626CB8E5800467983 /* Practice-Health */ = {
 			isa = PBXGroup;
 			children = (
+				C6326B3326CCFB5C006257F3 /* Resources */,
+				C6326B3226CCFB0B006257F3 /* AccountController */,
+				C6326B2226CCC428006257F3 /*  DTO */,
 				C65C330726CB8E5800467983 /* AppDelegate.swift */,
 				C65C330926CB8E5800467983 /* SceneDelegate.swift */,
 				C65C330D26CB8E5800467983 /* Main.storyboard */,
-				C6326B2026CC852E006257F3 /* FindPwViewController.swift */,
-				C6326B1E26CC84FF006257F3 /* FindIdViewController.swift */,
 				C6326B1A26CC84CB006257F3 /* MainViewController.swift */,
-				C6326B1C26CC84D8006257F3 /* SignUpViewController.swift */,
-				C6326B1826CC8189006257F3 /* LoginViewController.swift */,
 				C65C331326CB8E5900467983 /* Assets.xcassets */,
 				C65C331526CB8E5900467983 /* LaunchScreen.storyboard */,
 				C65C331826CB8E5900467983 /* Info.plist */,
@@ -154,12 +206,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6326B1D26CC84D8006257F3 /* SignUpViewController.swift in Sources */,
+				C6326B2526CCC502006257F3 /* Create_AccountDTO_REQ.swift in Sources */,
 				C65C331226CB8E5800467983 /* Practice_Health.xcdatamodeld in Sources */,
+				C6326B3126CCE84F006257F3 /* LoginRequest.swift in Sources */,
+				C6326B2C26CCCC96006257F3 /* SignupRequest.swift in Sources */,
 				C65C330826CB8E5800467983 /* AppDelegate.swift in Sources */,
 				C6326B1926CC8189006257F3 /* LoginViewController.swift in Sources */,
 				C6326B2126CC852E006257F3 /* FindPwViewController.swift in Sources */,
 				C6326B1F26CC84FF006257F3 /* FindIdViewController.swift in Sources */,
 				C65C330A26CB8E5800467983 /* SceneDelegate.swift in Sources */,
+				C6326B2F26CCE81E006257F3 /* Login_AccountDTO_REQ.swift in Sources */,
 				C6326B1B26CC84CB006257F3 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

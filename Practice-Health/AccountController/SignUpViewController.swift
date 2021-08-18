@@ -5,6 +5,7 @@
 //  Created by 김효준 on 2021/08/18.
 //
 
+import Foundation
 import UIKit
 
 // MARK: - Main Code
@@ -16,6 +17,9 @@ class SignUpViewController: UIViewController {
     @IBOutlet var secondPwTf: UITextField!
     @IBOutlet var nameTf: UITextField!
     @IBOutlet var doAuthBtn: UIButton!
+    @IBOutlet var goAuthBtn: UIButton!
+    
+    var signUpInfo = Create_AccountDTO_REQ()
     
     var id: String?
     var phoneAuth: Bool?
@@ -39,7 +43,6 @@ class SignUpViewController: UIViewController {
             
             doAuthBtn.isHidden = false
             authNumTf.isHidden = false
-            
             id = phone
             
         } else {
@@ -52,13 +55,19 @@ class SignUpViewController: UIViewController {
         
         let authNum = authNumTf.text
         
-        if authNum == "123123" {
+        if authNum == "123" {
             
             self.alert("인증이 완료되었습니다.")
             
+            goAuthBtn.isEnabled = false
+            phoneTf.isEnabled = false
             doAuthBtn.isHidden = true
             authNumTf.isHidden = true
             phoneAuth = true
+            signUpInfo.memberId = id
+            
+            self.view.endEditing(true)
+            
         } else {
             
             self.alert("잘못된 인증번호 입니다.")
@@ -78,16 +87,10 @@ class SignUpViewController: UIViewController {
             if pw1 == pw2 {
                 
                 if name.count >= 2 {
+                    signUpInfo.name = name
+                    signUpInfo.password = pw1
                     
-                    let alert = UIAlertController(title: "회원가입", message: "회원가입 성공!", preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(title: "확인", style: .cancel) { (_) in
-                        self.presentingViewController?.dismiss(animated: true)
-                    })
-                    
-                    DispatchQueue.main.async {
-                        self.present(alert, animated: false)
-                    }
+                    self.requestSignUp()
                     
                 } else {
                     
@@ -103,6 +106,12 @@ class SignUpViewController: UIViewController {
             
             self.alert("연락처 인증을 진행해주세요")
         }
+    }
+    
+    func requestSignUp() {
+        let param = ["memberId" : signUpInfo.memberId, "password" : signUpInfo.password, "name" : signUpInfo.name]
+        let url = "https://fapi.leescode.com/member"
+        signupRequestPost(url: url, param: param, view: self)
     }
 }
 
