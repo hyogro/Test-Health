@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6326B1926CC8189006257F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B1826CC8189006257F3 /* LoginViewController.swift */; };
+		C6326B1B26CC84CB006257F3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B1A26CC84CB006257F3 /* MainViewController.swift */; };
+		C6326B1D26CC84D8006257F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B1C26CC84D8006257F3 /* SignUpViewController.swift */; };
+		C6326B1F26CC84FF006257F3 /* FindIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B1E26CC84FF006257F3 /* FindIdViewController.swift */; };
+		C6326B2126CC852E006257F3 /* FindPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B2026CC852E006257F3 /* FindPwViewController.swift */; };
 		C65C330826CB8E5800467983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C330726CB8E5800467983 /* AppDelegate.swift */; };
 		C65C330A26CB8E5800467983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C330926CB8E5800467983 /* SceneDelegate.swift */; };
-		C65C330C26CB8E5800467983 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C330B26CB8E5800467983 /* ViewController.swift */; };
 		C65C330F26CB8E5800467983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65C330D26CB8E5800467983 /* Main.storyboard */; };
 		C65C331226CB8E5800467983 /* Practice_Health.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C65C331026CB8E5800467983 /* Practice_Health.xcdatamodeld */; };
 		C65C331426CB8E5900467983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C65C331326CB8E5900467983 /* Assets.xcassets */; };
@@ -17,10 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6326B1826CC8189006257F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C6326B1A26CC84CB006257F3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C6326B1C26CC84D8006257F3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C6326B1E26CC84FF006257F3 /* FindIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdViewController.swift; sourceTree = "<group>"; };
+		C6326B2026CC852E006257F3 /* FindPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwViewController.swift; sourceTree = "<group>"; };
 		C65C330426CB8E5800467983 /* Practice-Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practice-Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65C330726CB8E5800467983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C65C330926CB8E5800467983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C65C330B26CB8E5800467983 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C65C330E26CB8E5800467983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C65C331126CB8E5800467983 /* Practice_Health.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Practice_Health.xcdatamodel; sourceTree = "<group>"; };
 		C65C331326CB8E5900467983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,8 +68,12 @@
 			children = (
 				C65C330726CB8E5800467983 /* AppDelegate.swift */,
 				C65C330926CB8E5800467983 /* SceneDelegate.swift */,
-				C65C330B26CB8E5800467983 /* ViewController.swift */,
 				C65C330D26CB8E5800467983 /* Main.storyboard */,
+				C6326B2026CC852E006257F3 /* FindPwViewController.swift */,
+				C6326B1E26CC84FF006257F3 /* FindIdViewController.swift */,
+				C6326B1A26CC84CB006257F3 /* MainViewController.swift */,
+				C6326B1C26CC84D8006257F3 /* SignUpViewController.swift */,
+				C6326B1826CC8189006257F3 /* LoginViewController.swift */,
 				C65C331326CB8E5900467983 /* Assets.xcassets */,
 				C65C331526CB8E5900467983 /* LaunchScreen.storyboard */,
 				C65C331826CB8E5900467983 /* Info.plist */,
@@ -141,10 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6326B1D26CC84D8006257F3 /* SignUpViewController.swift in Sources */,
 				C65C331226CB8E5800467983 /* Practice_Health.xcdatamodeld in Sources */,
-				C65C330C26CB8E5800467983 /* ViewController.swift in Sources */,
 				C65C330826CB8E5800467983 /* AppDelegate.swift in Sources */,
+				C6326B1926CC8189006257F3 /* LoginViewController.swift in Sources */,
+				C6326B2126CC852E006257F3 /* FindPwViewController.swift in Sources */,
+				C6326B1F26CC84FF006257F3 /* FindIdViewController.swift in Sources */,
 				C65C330A26CB8E5800467983 /* SceneDelegate.swift in Sources */,
+				C6326B1B26CC84CB006257F3 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +317,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +327,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -329,6 +346,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -338,7 +356,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
