@@ -8,6 +8,6 @@
 import Foundation
 
 class Login_AccountDTO_REQ {
-    var memberId: String?
+    var userId: String?
     var password: String?
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - Login Main Code
 class LoginViewController: UIViewController {
 
     @IBOutlet var idTf: UITextField!
@@ -15,17 +16,19 @@ class LoginViewController: UIViewController {
     var loginInfo = Login_AccountDTO_REQ()
     
     override func viewWillAppear(_ animated: Bool) {
-        if let memberId = UserDefaults.standard.string(forKey: "memberId") {
+        if let userId = UserDefaults.standard.string(forKey: "userId") {
             let password = UserDefaults.standard.string(forKey: "password")!
-            let param = ["memberId" : memberId, "password" : password]
+            let param = ["userId" : userId, "password" : password]
             let url = "https://fapi.leescode.com/account/login"
-            loginRequestPost(url: url, param: param, memberId: memberId, password: password, view: self)
+            loginRequestPost(url: url, param: param, userId: userId, password: password, view: self)
         }
     }
     
     override func viewDidLoad() {
         idTf.placeholder = "ID"
-        pwTf.placeholder = "Password"        
+        pwTf.placeholder = "Password"
+        
+        super.viewDidLoad()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -34,14 +37,22 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func clickBtnLogin(_ sender: UIButton) {
-        guard let memberId = idTf?.text else { return }
+        guard let userId = idTf?.text else { return }
         guard let password = pwTf?.text else { return }
-        loginInfo.memberId = memberId
-        loginInfo.password = password
         
-        let param = ["memberId" : loginInfo.memberId, "password" : loginInfo.password]
-        let url = "https://fapi.leescode.com/account/login"
-        loginRequestPost(url: url, param: param, memberId: memberId, password: password, view: self)
+        if userId.count == 11 && password.count >= 3 {
+            loginInfo.userId = userId
+            loginInfo.password = password
+            
+            idTf.text = ""
+            pwTf.text = ""
+            
+            let param = ["userId" : loginInfo.userId, "password" : loginInfo.password]
+            let url = "https://fapi.leescode.com/account/login"
+            loginRequestPost(url: url, param: param, userId: userId, password: password, view: self)
+        } else {
+            alert("ID 또는 비밀번호를 확인해주세요.", view: self)
+        }
     }
     
     @IBAction func clickGoSignUpBtn(_ sender: UIButton) {

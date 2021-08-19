@@ -7,7 +7,7 @@
 import UIKit
 import Foundation
 
-func loginRequestPost(url: String, param: [String: String?], memberId: String, password: String, view: UIViewController) {
+func loginRequestPost(url: String, param: [String: String?], userId: String, password: String, view: UIViewController) {
     let mvc = view.storyboard!.instantiateViewController(withIdentifier: "MainVC")
     let requestUrl = URL(string: url)
     var request = URLRequest(url: requestUrl!)
@@ -31,11 +31,24 @@ func loginRequestPost(url: String, param: [String: String?], memberId: String, p
                 
                 let code = jsonObject["code"] as? String
                 let message = jsonObject["message"] as? String
+                let data = jsonObject["data"] as? NSDictionary
+                let grantType = data!.value(forKey: "grantType") as? String
+                let accessToken = data!.value(forKey: "accessToken") as? String
+                let refreshToken = data!.value(forKey: "refreshToken") as? String
+                let accessTokenExpiresIn = data!.value(forKey: "accessTokenExpiresIn") as? Int
+                NSLog("granType : \(grantType ?? "값이없습니다.")")
+                NSLog("accessToken : \(accessToken ?? "값이 없습니다.")")
+                NSLog("refreshToken : \(refreshToken ?? "값이 없습니다.")")
+                NSLog("accessTokenExpiresIn : \(accessTokenExpiresIn ?? 0)")
                 if code == "A2000" {
                     NSLog("로그인 성공! \(String(describing: message))")
                     
-                    UserDefaults.standard.set(memberId, forKey: "memberId")
+                    UserDefaults.standard.set(userId, forKey: "userId")
                     UserDefaults.standard.set(password, forKey: "password")
+                    UserDefaults.standard.set(grantType, forKey: "grantType")
+                    UserDefaults.standard.set(accessToken, forKey: "accessToken")
+                    UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
+                    UserDefaults.standard.set(accessTokenExpiresIn, forKey: "accessTokenExpiresIn")
                     
                     mvc.modalTransitionStyle = .coverVertical
                     mvc.modalPresentationStyle = .fullScreen
@@ -44,7 +57,7 @@ func loginRequestPost(url: String, param: [String: String?], memberId: String, p
                 }
             } catch let e as NSError {
                 NSLog("로그인 실패... \(e.localizedDescription)")
-                view.alert("로그인 실패하였습니다.")
+                view.alert("로그인 실패하였습니다.", view: view)
             }
         }
     }

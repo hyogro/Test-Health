@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-// MARK: - Main Code
+// MARK: SignUp Main Code
 class SignUpViewController: UIViewController {
 
     @IBOutlet var phoneTf: UITextField!
@@ -47,7 +47,7 @@ class SignUpViewController: UIViewController {
             
         } else {
             
-            self.alert("연락처를 확인해주세요.")
+            alert("연락처를 확인해주세요.", view: self)
         }
     }
     
@@ -57,20 +57,20 @@ class SignUpViewController: UIViewController {
         
         if authNum == "123" {
             
-            self.alert("인증이 완료되었습니다.")
+            alert("인증이 완료되었습니다.", view: self)
             
             goAuthBtn.isEnabled = false
             phoneTf.isEnabled = false
             doAuthBtn.isHidden = true
             authNumTf.isHidden = true
             phoneAuth = true
-            signUpInfo.memberId = id
+            signUpInfo.userId = id
             
             self.view.endEditing(true)
             
         } else {
             
-            self.alert("잘못된 인증번호 입니다.")
+            alert("잘못된 인증번호 입니다.", view: self)
         }
     }
     
@@ -94,38 +94,23 @@ class SignUpViewController: UIViewController {
                     
                 } else {
                     
-                    self.alert("이름을 입력해주세요.")
+                    alert("이름을 입력해주세요.", view: self)
                 }
                 
             } else {
                 
-                self.alert("비밀번호를 확인해주세요.")
+                alert("비밀번호를 확인해주세요.", view: self)
             }
             
         } else {
             
-            self.alert("연락처 인증을 진행해주세요")
+            alert("연락처 인증을 진행해주세요", view: self)
         }
     }
     
     func requestSignUp() {
-        let param = ["memberId" : signUpInfo.memberId, "password" : signUpInfo.password, "name" : signUpInfo.name]
-        let url = "https://fapi.leescode.com/member"
+        let param = ["userId" : signUpInfo.userId, "password" : signUpInfo.password, "name" : signUpInfo.name]
+        let url = "https://fapi.leescode.com/user"
         signupRequestPost(url: url, param: param, view: self)
-    }
-}
-
-// MARK: - Alert 함수 정의용 Extension
-extension UIViewController {
-    
-    func alert(_ message: String) {
-        
-        let controller = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        
-        controller.addAction(UIAlertAction(title: "확인", style: .cancel))
-        
-        DispatchQueue.main.async {
-            self.present(controller, animated: false)
-        }
     }
 }

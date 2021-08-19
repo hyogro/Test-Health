@@ -10,7 +10,6 @@ import UIKit
 class FindIdViewController: UIViewController {
 
     override func viewDidLoad() {
-        
 
     }
 

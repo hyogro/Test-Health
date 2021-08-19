@@ -8,7 +8,7 @@
 import Foundation
 
 class Create_AccountDTO_REQ {
-    var memberId: String?
+    var userId: String?
     var password: String?
     var name: String?
 }

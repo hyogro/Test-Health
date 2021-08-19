@@ -78,3 +78,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+// MARK: - Alert 함수 정의용 Extension
+extension UIViewController {
+    
+    func alert(_ message: String, view: UIViewController) {
+        
+        let controller = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        controller.addAction(UIAlertAction(title: "확인", style: .cancel))
+        
+        DispatchQueue.main.async {
+            view.present(controller, animated: false)
+        }
+    }
+}

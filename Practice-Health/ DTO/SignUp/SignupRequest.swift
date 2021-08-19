@@ -43,7 +43,7 @@ func signupRequestPost(url: String, param: [String: String?], view: UIViewContro
                 }
             } catch let e as NSError {
                 NSLog("회원가입 실패... \(e.localizedDescription)")
-                view.alert("회원가입에 실패하였습니다.")
+                view.alert("회원가입에 실패하였습니다.", view: view)
             }
         }
     }

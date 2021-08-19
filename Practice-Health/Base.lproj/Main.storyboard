@@ -20,26 +20,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-iW-ex2" userLabel="Login">
                                 <rect key="frame" x="16" y="19" width="343" height="273"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="t5C-bP-eWc">
-                                        <rect key="frame" x="8" y="127" width="327" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="t5C-bP-eWc">
+                                        <rect key="frame" x="8" y="130" width="327" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RW3-3k-hlr">
-                                        <rect key="frame" x="8" y="174" width="327" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RW3-3k-hlr">
+                                        <rect key="frame" x="8" y="177" width="327" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5p-AE-6x8">
-                                        <rect key="frame" x="8" y="230" width="327" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5p-AE-6x8">
+                                        <rect key="frame" x="8" y="233" width="327" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Login" cornerStyle="dynamic"/>
                                         <connections>
                                             <action selector="clickBtnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GUp-r7-QkV"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="안녕하세요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7R-Zz-dJL">
-                                        <rect key="frame" x="115" y="53" width="112" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7R-Zz-dJL">
+                                        <rect key="frame" x="115" y="53" width="112" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" systemColor="linkColor"/>
                                         <nil key="highlightedColor"/>
@@ -144,14 +144,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTa-to-1rm">
-                                <rect key="frame" x="150" y="337" width="75" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="8Ed-wv-D85"/>
-                                </constraints>
+                                <rect key="frame" x="144" y="337" width="88" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="clickLogoutBtn:" destination="E2T-fg-ehh" eventType="touchUpInside" id="l02-lJ-wCT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W5A-vG-Jp0"/>
@@ -160,15 +160,15 @@
                             <constraint firstItem="W5A-vG-Jp0" firstAttribute="trailing" secondItem="vQ8-ZV-B8D" secondAttribute="trailing" constant="107" id="70d-2j-pcX"/>
                             <constraint firstItem="vQ8-ZV-B8D" firstAttribute="leading" secondItem="W5A-vG-Jp0" secondAttribute="leading" constant="108" id="7Fx-oD-CJW"/>
                             <constraint firstItem="vQ8-ZV-B8D" firstAttribute="top" secondItem="W5A-vG-Jp0" secondAttribute="top" constant="183" id="N0T-1t-FOC"/>
-                            <constraint firstItem="W5A-vG-Jp0" firstAttribute="trailing" secondItem="WTa-to-1rm" secondAttribute="trailing" constant="150" id="ORp-tV-oZI"/>
-                            <constraint firstItem="WTa-to-1rm" firstAttribute="leading" secondItem="W5A-vG-Jp0" secondAttribute="leading" constant="150" id="ZiF-JR-FAU"/>
                             <constraint firstItem="WTa-to-1rm" firstAttribute="top" secondItem="vQ8-ZV-B8D" secondAttribute="bottom" constant="114" id="fE2-Ju-h0n"/>
+                            <constraint firstItem="WTa-to-1rm" firstAttribute="leading" secondItem="W5A-vG-Jp0" secondAttribute="leading" constant="144" id="ncA-BB-3jZ"/>
+                            <constraint firstItem="W5A-vG-Jp0" firstAttribute="trailing" secondItem="WTa-to-1rm" secondAttribute="trailing" constant="143" id="wKV-5r-WNS"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggt-Ev-Cvf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2658" y="107"/>
+            <point key="canvasLocation" x="2656.8000000000002" y="106.59670164917542"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Iep-rG-CUK">
