@@ -35,13 +35,17 @@ func loginRequestPost(url: String, param: [String: String?], userId: String, pas
                 let grantType = data!.value(forKey: "grantType") as? String
                 let accessToken = data!.value(forKey: "accessToken") as? String
                 let refreshToken = data!.value(forKey: "refreshToken") as? String
-                let accessTokenExpiresIn = data!.value(forKey: "accessTokenExpiresIn") as? Int
+                var expiresSeconds = data!.value(forKey: "accessTokenExpiresIn") as? Double
+                let addTime: Double = 1000 * 60 * 60 * 9
+                expiresSeconds = expiresSeconds! + addTime
+                NSLog("\(String(describing: expiresSeconds))")
+                let accessTokenExpiresIn = Date(timeIntervalSince1970: expiresSeconds! / 1000)
                 NSLog("granType : \(grantType ?? "값이없습니다.")")
                 NSLog("accessToken : \(accessToken ?? "값이 없습니다.")")
                 NSLog("refreshToken : \(refreshToken ?? "값이 없습니다.")")
-                NSLog("accessTokenExpiresIn : \(accessTokenExpiresIn ?? 0)")
+                NSLog("accessTokenExpiresIn : \(String(describing: accessTokenExpiresIn))")
                 if code == "A2000" {
-                    NSLog("로그인 성공! \(String(describing: message))")
+                    NSLog("로그인 성공! \(String(describing: message!))")
                     
                     UserDefaults.standard.set(userId, forKey: "userId")
                     UserDefaults.standard.set(password, forKey: "password")

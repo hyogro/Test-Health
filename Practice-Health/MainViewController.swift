@@ -16,18 +16,27 @@ class MainViewController: UIViewController {
     
     @IBAction func clickLogoutBtn(_ sender: UIButton) {
         
-        UserDefaults.standard.removeObject(forKey: "userId")
-        UserDefaults.standard.removeObject(forKey: "password")
-        UserDefaults.standard.removeObject(forKey: "grantType")
-        UserDefaults.standard.removeObject(forKey: "accessToken")
-        UserDefaults.standard.removeObject(forKey: "refreshToken")
-        UserDefaults.standard.removeObject(forKey: "accessTokenExpiresIn")
+        let checkLogoutAlert = UIAlertController(title: "로그아웃", message: "로그아웃하시겠습니까?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default) { (_) in
+            let alert = UIAlertController(title: "로그아웃", message: "로그아웃되었습니다.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .cancel) { (_) in
+                UserDefaults.standard.removeObject(forKey: "userId")
+                UserDefaults.standard.removeObject(forKey: "password")
+                UserDefaults.standard.removeObject(forKey: "grantType")
+                UserDefaults.standard.removeObject(forKey: "accessToken")
+                UserDefaults.standard.removeObject(forKey: "refreshToken")
+                UserDefaults.standard.removeObject(forKey: "accessTokenExpiresIn")
+                
+                self.presentingViewController?.dismiss(animated: true)
+            })
+            
+            self.present(alert, animated: false)
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
         
-        let alert = UIAlertController(title: "로그아웃", message: "로그아웃되었습니다.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "확인", style: .cancel) { (_) in
-            self.presentingViewController?.dismiss(animated: true)
-        })
+        checkLogoutAlert.addAction(ok)
+        checkLogoutAlert.addAction(cancel)
+        self.present(checkLogoutAlert, animated: false)
         
-        self.present(alert, animated: false)
     }
 }

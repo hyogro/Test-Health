@@ -31,7 +31,7 @@ func signupRequestPost(url: String, param: [String: String?], view: UIViewContro
                 let code = jsonObject["code"] as? String
                 let message = jsonObject["message"] as? String
                 if code == "A1000" {
-                    NSLog("회원가입 성공! \(String(describing: message))")
+                    NSLog("회원가입 성공! \(String(describing: message!))")
                     
                     let alert = UIAlertController(title: "회원가입", message: "회원가입 성공!", preferredStyle: .alert)
                     
