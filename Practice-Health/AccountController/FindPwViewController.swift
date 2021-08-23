@@ -7,8 +7,12 @@
 
 import UIKit
 
+// MARK: Find Password Main Code
+
 class FindPwViewController: UIViewController {
 
+    // MARK: - Override Method
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

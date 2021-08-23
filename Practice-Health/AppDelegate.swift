@@ -82,6 +82,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: - Alert 함수 정의용 Extension
 extension UIViewController {
     
+    // MARK: User Defined Method
+    
+    /* 간단한 확인 알림창 메소드 */
     func alert(_ message: String, view: UIViewController) {
         
         let controller = UIAlertController(title: nil, message: message, preferredStyle: .alert)
@@ -91,5 +94,15 @@ extension UIViewController {
         DispatchQueue.main.async {
             view.present(controller, animated: false)
         }
+    }
+}
+
+// MARK: - 키패드 관련 함수
+
+extension UIViewController {
+    
+    /* 빈 공간 터치하면 키패드 내려감 */
+    @objc func tapOtherPlace(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
 }

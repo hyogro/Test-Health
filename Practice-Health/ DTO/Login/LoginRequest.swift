@@ -40,7 +40,7 @@ func loginRequestPost(url: String, param: [String: String?], userId: String, pas
                 expiresSeconds = expiresSeconds! + addTime
                 NSLog("\(String(describing: expiresSeconds))")
                 let accessTokenExpiresIn = Date(timeIntervalSince1970: expiresSeconds! / 1000)
-                NSLog("granType : \(grantType ?? "값이없습니다.")")
+                NSLog("granType : \(grantType ?? "값이 없습니다.")")
                 NSLog("accessToken : \(accessToken ?? "값이 없습니다.")")
                 NSLog("refreshToken : \(refreshToken ?? "값이 없습니다.")")
                 NSLog("accessTokenExpiresIn : \(String(describing: accessTokenExpiresIn))")
