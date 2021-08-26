@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
             let param = ["userId" : userId, "password" : password]
             let url = "https://fapi.leescode.com/account/login"
             loginRequestPost(url: url, param: param, userId: userId, password: password, view: self)
+            NSLog("\(userId)")
         }
     }
     
@@ -71,8 +72,8 @@ class LoginViewController: UIViewController {
     /* 회원가입 버튼 클릭 */
     @IBAction func clickGoSignUpBtn(_ sender: UIButton) {
         
-        /* 회원가입 뷰로 이동 */
-        let svc = self.storyboard!.instantiateViewController(withIdentifier: "SignUpVC")
+        /* 회원가입 뷰의 첫번째인 멤버타입 선택 뷰로 이동 */
+        let svc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceAuthVC")
         
         svc.modalTransitionStyle = .coverVertical
         

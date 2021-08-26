@@ -8,7 +8,6 @@ import UIKit
 import Foundation
 
 func loginRequestPost(url: String, param: [String: String?], userId: String, password: String, view: UIViewController) {
-    let mvc = view.storyboard!.instantiateViewController(withIdentifier: "MainVC")
     let requestUrl = URL(string: url)
     var request = URLRequest(url: requestUrl!)
     let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
@@ -31,20 +30,22 @@ func loginRequestPost(url: String, param: [String: String?], userId: String, pas
                 
                 let code = jsonObject["code"] as? String
                 let message = jsonObject["message"] as? String
-                let data = jsonObject["data"] as? NSDictionary
-                let grantType = data!.value(forKey: "grantType") as? String
-                let accessToken = data!.value(forKey: "accessToken") as? String
-                let refreshToken = data!.value(forKey: "refreshToken") as? String
-                var expiresSeconds = data!.value(forKey: "accessTokenExpiresIn") as? Double
-                let addTime: Double = 1000 * 60 * 60 * 9
-                expiresSeconds = expiresSeconds! + addTime
-                NSLog("\(String(describing: expiresSeconds))")
-                let accessTokenExpiresIn = Date(timeIntervalSince1970: expiresSeconds! / 1000)
-                NSLog("granType : \(grantType ?? "값이 없습니다.")")
-                NSLog("accessToken : \(accessToken ?? "값이 없습니다.")")
-                NSLog("refreshToken : \(refreshToken ?? "값이 없습니다.")")
-                NSLog("accessTokenExpiresIn : \(String(describing: accessTokenExpiresIn))")
+                
                 if code == "A2000" {
+                    let data = jsonObject["data"] as? NSDictionary
+                    let grantType = data!.value(forKey: "grantType") as? String
+                    let accessToken = data!.value(forKey: "accessToken") as? String
+                    let refreshToken = data!.value(forKey: "refreshToken") as? String
+                    var expiresSeconds = data!.value(forKey: "accessTokenExpiresIn") as? Double
+                    let addTime: Double = 1000 * 60 * 60 * 9
+                    expiresSeconds = expiresSeconds! + addTime
+                    NSLog("\(String(describing: expiresSeconds))")
+                    let accessTokenExpiresIn = Date(timeIntervalSince1970: expiresSeconds! / 1000)
+                    NSLog("granType : \(grantType ?? "값이 없습니다.")")
+                    NSLog("accessToken : \(accessToken ?? "값이 없습니다.")")
+                    NSLog("refreshToken : \(refreshToken ?? "값이 없습니다.")")
+                    NSLog("accessTokenExpiresIn : \(String(describing: accessTokenExpiresIn))")
+                    
                     NSLog("로그인 성공! \(String(describing: message!))")
                     
                     UserDefaults.standard.set(userId, forKey: "userId")
@@ -54,10 +55,10 @@ func loginRequestPost(url: String, param: [String: String?], userId: String, pas
                     UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
                     UserDefaults.standard.set(accessTokenExpiresIn, forKey: "accessTokenExpiresIn")
                     
-                    mvc.modalTransitionStyle = .coverVertical
-                    mvc.modalPresentationStyle = .fullScreen
-                    
-                    view.present(mvc, animated: true)
+                    view.presentingViewController?.dismiss(animated: true)
+                } else {
+                    NSLog("로그인 실패 \(String(describing: message!))")
+                    view.alert("ID와 비밀번호를 확인해주세요.", view: view)
                 }
             } catch let e as NSError {
                 NSLog("로그인 실패... \(e.localizedDescription)")
