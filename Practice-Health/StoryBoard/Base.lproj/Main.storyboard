@@ -441,23 +441,13 @@
                     <view key="view" contentMode="scaleToFill" id="WfB-ky-l18">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oeM-Yp-rye">
-                                <rect key="frame" x="101" y="97" width="131" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="f8K-mI-L4o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viY-dL-lDM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2398" y="2266"/>
+            <point key="canvasLocation" x="2397.5999999999999" y="2265.5172413793107"/>
         </scene>
         <!--Main-->
         <scene sceneID="KZF-Jj-DQg">

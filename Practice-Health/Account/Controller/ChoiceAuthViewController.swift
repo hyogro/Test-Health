@@ -9,8 +9,7 @@ import UIKit
 
 class ChoiceAuthViewController: UIViewController {
 
-
-
+    
 }
 
 // MARK: -  키패드 관련
