@@ -49,18 +49,14 @@ class MenuViewController: UITableViewController {
             
             let aivc = self.storyboard!.instantiateViewController(withIdentifier: "AccountInfoVC")
             
-            aivc.modalTransitionStyle = .coverVertical
-            aivc.modalPresentationStyle = .fullScreen
-            
             self.navigationController?.pushViewController(aivc, animated: true)
             
         } else {
             
             let lvc = self.storyboard!.instantiateViewController(withIdentifier: "LoginVC")
             
-            lvc.modalTransitionStyle = .coverVertical
+            self.navigationController?.pushViewController(lvc, animated: true)
             
-            self.present(lvc, animated: true)
         }
     }
     

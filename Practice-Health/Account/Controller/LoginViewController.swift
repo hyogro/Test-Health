@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         
         /* ID, PW 텍스트 필드에 안내문자 세팅 */
-        idTf.placeholder = "ID"
+        idTf.placeholder = "Email ID"
         pwTf.placeholder = "Password"
         
         super.viewDidLoad()
@@ -69,20 +69,14 @@ class LoginViewController: UIViewController {
         }
     }
     
-    /* 회원가입 버튼 클릭 */
-    @IBAction func clickGoSignUpBtn(_ sender: UIButton) {
+    @IBAction func clickGoCreateAccountBtn(_ sender: UIButton) {
+        let cavc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceAuthVC")
         
-        /* 회원가입 뷰의 첫번째인 멤버타입 선택 뷰로 이동 */
-        let svc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceAuthVC")
-        
-        svc.modalTransitionStyle = .coverVertical
-        svc.modalPresentationStyle = .fullScreen
-        
-        self.present(svc, animated: true)
+        self.navigationController?.pushViewController(cavc, animated: true)
     }
 }
 
-// MARK: - 키패드 관련
+// MARK: - 키패드 제어 Extension
 
 extension LoginViewController {
     

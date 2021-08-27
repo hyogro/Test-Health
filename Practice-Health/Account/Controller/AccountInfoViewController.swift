@@ -10,7 +10,7 @@ import UIKit
 class AccountInfoViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        self.title = "내 정보 보기"
 
     }
 

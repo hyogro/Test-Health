@@ -28,6 +28,7 @@
 		C65C331426CB8E5900467983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C65C331326CB8E5900467983 /* Assets.xcassets */; };
 		C65C331726CB8E5900467983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65C331526CB8E5900467983 /* LaunchScreen.storyboard */; };
 		C67FE01E26D48AB800E5E5BC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FE01D26D48AB800E5E5BC /* MenuViewController.swift */; };
+		C6C6BCC326D8CF72004F5D00 /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6BCC226D8CF72004F5D00 /* CreatePasswordViewController.swift */; };
 		C6E87A5426D778B90014920A /* CreateIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E87A5326D778B90014920A /* CreateIdViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		C65C331626CB8E5900467983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C65C331826CB8E5900467983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C67FE01D26D48AB800E5E5BC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C6C6BCC226D8CF72004F5D00 /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		C6E87A5226D75DE00014920A /* Practice-Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practice-Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E87A5326D778B90014920A /* CreateIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +184,7 @@
 				C64C94C426D6105200B133B0 /* AccountInfoViewController.swift */,
 				C618E66126D724DC007C88BB /* ChoiceAuthViewController.swift */,
 				C6E87A5326D778B90014920A /* CreateIdViewController.swift */,
+				C6C6BCC226D8CF72004F5D00 /* CreatePasswordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				C6326B1926CC8189006257F3 /* LoginViewController.swift in Sources */,
 				C67FE01E26D48AB800E5E5BC /* MenuViewController.swift in Sources */,
 				C6326B2126CC852E006257F3 /* FindPwViewController.swift in Sources */,
+				C6C6BCC326D8CF72004F5D00 /* CreatePasswordViewController.swift in Sources */,
 				C6326B1F26CC84FF006257F3 /* FindIdViewController.swift in Sources */,
 				C65C330A26CB8E5800467983 /* SceneDelegate.swift in Sources */,
 				C6326B2F26CCE81E006257F3 /* Login_AccountDTO_REQ.swift in Sources */,

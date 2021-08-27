@@ -18,7 +18,14 @@ class ChoiceAuthViewController: UIViewController {
     
     // MARK: - Property
 
-    var account = Create_AccountDTO_REQ()
+    var authority: String = ""
+    
+    // MARK: - Override Method
+    
+    override func viewDidLoad() {
+        goCreateIdBtn.isEnabled = false
+        self.title = "계정 타입 선택"
+    }
     
     // MARK: - Action Method
     
@@ -27,28 +34,20 @@ class ChoiceAuthViewController: UIViewController {
         
         if choiceAuth.selectedSegmentIndex == 0 {
             goCreateIdBtn.setTitle("수강생으로 가입하기", for: .normal)
+            authority = "ROLE_MEMBERSHIP"
         } else {
             goCreateIdBtn.setTitle("강사로 가입하기", for: .normal)
+            authority = "ROLE_TRAINER"
         }
-        choiceAuth.isSelected = true
+        goCreateIdBtn.isEnabled = true
     }
     
     /* Segmented Control의 선택지가 존재할 경우 다음 페이지로 이동 */
-    @IBAction func goCreateIdBtn(_ sender: UIButton) {
-        var test: String?
-        if choiceAuth.isSelected == true {
-            test = "true"
-        } else {
-            test = "false"
-        }
-        NSLog(test!)
-        if choiceAuth.isSelected {
-            let civc = self.storyboard!.instantiateViewController(withIdentifier: "CreateIdVC")
-            
-            civc.modalTransitionStyle = .coverVertical
-            civc.modalPresentationStyle = .fullScreen
-            
-            self.present(civc, animated: true)
-        }
+    @IBAction func clickGoCreateIdBtn(_ sender: UIButton) {
+        
+        let civc = self.storyboard!.instantiateViewController(withIdentifier: "CreateIdVC") as! CreateIdViewController
+        
+        civc.authority = authority
+        self.navigationController!.pushViewController(civc, animated: true)
     }
 }
