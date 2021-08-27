@@ -37,7 +37,6 @@ class CreatePasswordViewController: UIViewController {
     @IBAction func clickGoInputNameBtn(_ sender: UIButton) {
         
         if pwTf.text!.count >= 4 && pwTf.text == checkPwTf.text {
-            
             password = pwTf.text!
         } else {
             alert("입력한 비밀번호를 확인해주세요.", view: self)
