@@ -441,13 +441,71 @@
                     <view key="view" contentMode="scaleToFill" id="WfB-ky-l18">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="환영합니다!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UI4-Iu-hTS">
+                                <rect key="frame" x="141" y="49" width="93" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d7-5n-ro7">
+                                <rect key="frame" x="74" y="558" width="227" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="계정 타입을 선택해주세요."/>
+                                <connections>
+                                    <action selector="goCreateIdBtn:" destination="x7j-Lc-ooI" eventType="touchUpInside" id="Esq-oB-8Gq"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="lT3-YU-1vj">
+                                <rect key="frame" x="16" y="183" width="343" height="32"/>
+                                <color key="backgroundColor" red="0.83724629510309279" green="0.83513937000283778" blue="0.81003036643649562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="수강생"/>
+                                    <segment title="강사"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.33224721369394727" green="1" blue="0.38515993909376078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="choiceAuthAction:" destination="x7j-Lc-ooI" eventType="valueChanged" id="MwX-vp-oTs"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="f8K-mI-L4o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f8K-mI-L4o" firstAttribute="trailing" secondItem="lT3-YU-1vj" secondAttribute="trailing" constant="16" id="0vp-ur-Xyz"/>
+                            <constraint firstItem="f8K-mI-L4o" firstAttribute="trailing" secondItem="5d7-5n-ro7" secondAttribute="trailing" constant="74" id="2bW-5c-2lS"/>
+                            <constraint firstItem="f8K-mI-L4o" firstAttribute="trailing" secondItem="UI4-Iu-hTS" secondAttribute="trailing" constant="141" id="3AJ-Jl-0NE"/>
+                            <constraint firstItem="UI4-Iu-hTS" firstAttribute="leading" secondItem="f8K-mI-L4o" secondAttribute="leading" constant="141" id="CH0-02-ESs"/>
+                            <constraint firstItem="5d7-5n-ro7" firstAttribute="leading" secondItem="f8K-mI-L4o" secondAttribute="leading" constant="74" id="Dp6-lM-1z1"/>
+                            <constraint firstItem="UI4-Iu-hTS" firstAttribute="top" secondItem="f8K-mI-L4o" secondAttribute="top" constant="49" id="EFQ-QM-HHd"/>
+                            <constraint firstItem="lT3-YU-1vj" firstAttribute="top" secondItem="UI4-Iu-hTS" secondAttribute="bottom" constant="110" id="d4V-oV-nY1"/>
+                            <constraint firstItem="lT3-YU-1vj" firstAttribute="leading" secondItem="f8K-mI-L4o" secondAttribute="leading" constant="16" id="efO-n1-FPp"/>
+                            <constraint firstItem="f8K-mI-L4o" firstAttribute="bottom" secondItem="5d7-5n-ro7" secondAttribute="bottom" constant="74" id="isP-Zy-nWj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="choiceAuth" destination="lT3-YU-1vj" id="bDi-Aj-KGQ"/>
+                        <outlet property="goCreateIdBtn" destination="5d7-5n-ro7" id="yWV-NT-h8a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viY-dL-lDM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2397.5999999999999" y="2265.5172413793107"/>
+        </scene>
+        <!--Create Id View Controller-->
+        <scene sceneID="CmB-gU-Z7i">
+            <objects>
+                <viewController storyboardIdentifier="CreateIdVC" id="tp4-ZL-gpl" customClass="CreateIdViewController" customModule="Practice_Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="snU-DG-52X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XV7-fx-KpF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sx3-yN-PA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2398" y="2936"/>
         </scene>
         <!--Main-->
         <scene sceneID="KZF-Jj-DQg">

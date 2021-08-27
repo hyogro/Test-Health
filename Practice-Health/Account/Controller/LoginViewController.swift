@@ -76,6 +76,7 @@ class LoginViewController: UIViewController {
         let svc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceAuthVC")
         
         svc.modalTransitionStyle = .coverVertical
+        svc.modalPresentationStyle = .fullScreen
         
         self.present(svc, animated: true)
     }

@@ -11,4 +11,8 @@ class Create_AccountDTO_REQ {
     var userId: String?
     var password: String?
     var name: String?
+    var phone: String?
+    var birthDate: String?
+    var sex: String?
+    var authority: String?
 }

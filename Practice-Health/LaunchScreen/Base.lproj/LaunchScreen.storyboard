@@ -18,17 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MP3-j1-z9b">
-                                <rect key="frame" x="98" y="293" width="218" height="310"/>
+                                <rect key="frame" x="131.5" y="197" width="151" height="512"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="wjq-6C-LcL"/>
+                                </constraints>
                                 <imageReference key="image" image="apple.png"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.3873447213165469" green="0.78701931587864549" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MP3-j1-z9b" secondAttribute="trailing" constant="98" id="61X-2S-wqV"/>
-                            <constraint firstItem="MP3-j1-z9b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="249" id="WEu-kO-ICY"/>
-                            <constraint firstItem="MP3-j1-z9b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="98" id="pur-S7-VOT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MP3-j1-z9b" secondAttribute="bottom" constant="259" id="weL-Hg-k1F"/>
+                            <constraint firstItem="MP3-j1-z9b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Phv-NS-EpZ"/>
+                            <constraint firstItem="MP3-j1-z9b" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="n93-5T-xhS"/>
                         </constraints>
                     </view>
                 </viewController>

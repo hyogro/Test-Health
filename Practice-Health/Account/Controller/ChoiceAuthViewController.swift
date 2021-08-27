@@ -7,20 +7,48 @@
 
 import UIKit
 
+// MARK: Choice Authority Main Code
+
 class ChoiceAuthViewController: UIViewController {
-
     
-}
-
-// MARK: -  키패드 관련
-
-extension ChoiceAuthViewController {
+    // MARK: Outlet Property
     
-    // MARK: Override Method
+    @IBOutlet var choiceAuth: UISegmentedControl!
+    @IBOutlet var goCreateIdBtn: UIButton!
     
-    /* 여백 터치하면 키패드 내림 */
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    // MARK: - Property
+
+    var account = Create_AccountDTO_REQ()
+    
+    // MARK: - Action Method
+    
+    /* Segmented Control 선택지에 따라 버튼 Title 변경 */
+    @IBAction func choiceAuthAction(_ sender: UISegmentedControl) {
         
-        self.view.endEditing(true)
+        if choiceAuth.selectedSegmentIndex == 0 {
+            goCreateIdBtn.setTitle("수강생으로 가입하기", for: .normal)
+        } else {
+            goCreateIdBtn.setTitle("강사로 가입하기", for: .normal)
+        }
+        choiceAuth.isSelected = true
+    }
+    
+    /* Segmented Control의 선택지가 존재할 경우 다음 페이지로 이동 */
+    @IBAction func goCreateIdBtn(_ sender: UIButton) {
+        var test: String?
+        if choiceAuth.isSelected == true {
+            test = "true"
+        } else {
+            test = "false"
+        }
+        NSLog(test!)
+        if choiceAuth.isSelected {
+            let civc = self.storyboard!.instantiateViewController(withIdentifier: "CreateIdVC")
+            
+            civc.modalTransitionStyle = .coverVertical
+            civc.modalPresentationStyle = .fullScreen
+            
+            self.present(civc, animated: true)
+        }
     }
 }

@@ -28,6 +28,7 @@
 		C65C331426CB8E5900467983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C65C331326CB8E5900467983 /* Assets.xcassets */; };
 		C65C331726CB8E5900467983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65C331526CB8E5900467983 /* LaunchScreen.storyboard */; };
 		C67FE01E26D48AB800E5E5BC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FE01D26D48AB800E5E5BC /* MenuViewController.swift */; };
+		C6E87A5426D778B90014920A /* CreateIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E87A5326D778B90014920A /* CreateIdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +46,6 @@
 		C6326B3726CCFCB8006257F3 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
 		C64C94BF26D5D7CC00B133B0 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		C64C94C426D6105200B133B0 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
-		C65C330426CB8E5800467983 /* Practice-Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practice-Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65C330726CB8E5800467983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C65C330926CB8E5800467983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C65C330E26CB8E5800467983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +54,8 @@
 		C65C331626CB8E5900467983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C65C331826CB8E5900467983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C67FE01D26D48AB800E5E5BC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C6E87A5226D75DE00014920A /* Practice-Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practice-Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6E87A5326D778B90014920A /* CreateIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				C6326B1826CC8189006257F3 /* LoginViewController.swift */,
 				C64C94C426D6105200B133B0 /* AccountInfoViewController.swift */,
 				C618E66126D724DC007C88BB /* ChoiceAuthViewController.swift */,
+				C6E87A5326D778B90014920A /* CreateIdViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,16 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				C65C330626CB8E5800467983 /* Practice-Health */,
-				C65C330526CB8E5800467983 /* Products */,
+				C6E87A5226D75DE00014920A /* Practice-Health.app */,
 			);
-			sourceTree = "<group>";
-		};
-		C65C330526CB8E5800467983 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C65C330426CB8E5800467983 /* Practice-Health.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C65C330626CB8E5800467983 /* Practice-Health */ = {
@@ -223,11 +218,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C65C331B26CB8E5900467983 /* Build configuration list for PBXNativeTarget "Practice-Health" */;
 			buildPhases = (
-				3BD7383F834B2FB312CC8D81 /* [CP] Check Pods Manifest.lock */,
 				C65C330026CB8E5800467983 /* Sources */,
 				C65C330126CB8E5800467983 /* Frameworks */,
 				C65C330226CB8E5800467983 /* Resources */,
-				6B595C01FD2348A39A4CFF39 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,7 +228,7 @@
 			);
 			name = "Practice-Health";
 			productName = "Practice-Health";
-			productReference = C65C330426CB8E5800467983 /* Practice-Health.app */;
+			productReference = C6E87A5226D75DE00014920A /* Practice-Health.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -262,7 +255,7 @@
 				Base,
 			);
 			mainGroup = C65C32FB26CB8E5800467983;
-			productRefGroup = C65C330526CB8E5800467983 /* Products */;
+			productRefGroup = C65C32FB26CB8E5800467983;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -286,48 +279,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3BD7383F834B2FB312CC8D81 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Practice-Health-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6B595C01FD2348A39A4CFF39 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Practice-Health/Pods-Practice-Health-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Practice-Health/Pods-Practice-Health-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Practice-Health/Pods-Practice-Health-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		C65C330026CB8E5800467983 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -339,6 +290,7 @@
 				C65C331226CB8E5800467983 /* Practice_Health.xcdatamodeld in Sources */,
 				C6326B3126CCE84F006257F3 /* LoginRequest.swift in Sources */,
 				C618E66226D724DC007C88BB /* ChoiceAuthViewController.swift in Sources */,
+				C6E87A5426D778B90014920A /* CreateIdViewController.swift in Sources */,
 				C64C94C526D6105200B133B0 /* AccountInfoViewController.swift in Sources */,
 				C6326B2C26CCCC96006257F3 /* SignupRequest.swift in Sources */,
 				C65C330826CB8E5800467983 /* AppDelegate.swift in Sources */,
