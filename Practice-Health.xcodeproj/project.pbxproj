@@ -10,7 +10,6 @@
 		C618E66226D724DC007C88BB /* ChoiceAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618E66126D724DC007C88BB /* ChoiceAuthViewController.swift */; };
 		C6326B1926CC8189006257F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B1826CC8189006257F3 /* LoginViewController.swift */; };
 		C6326B1B26CC84CB006257F3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B1A26CC84CB006257F3 /* MainViewController.swift */; };
-		C6326B1D26CC84D8006257F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B1C26CC84D8006257F3 /* SignUpViewController.swift */; };
 		C6326B1F26CC84FF006257F3 /* FindIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B1E26CC84FF006257F3 /* FindIdViewController.swift */; };
 		C6326B2126CC852E006257F3 /* FindPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B2026CC852E006257F3 /* FindPwViewController.swift */; };
 		C6326B2526CCC502006257F3 /* Create_AccountDTO_REQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B2426CCC502006257F3 /* Create_AccountDTO_REQ.swift */; };
@@ -27,6 +26,10 @@
 		C65C331226CB8E5800467983 /* Practice_Health.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C65C331026CB8E5800467983 /* Practice_Health.xcdatamodeld */; };
 		C65C331426CB8E5900467983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C65C331326CB8E5900467983 /* Assets.xcassets */; };
 		C65C331726CB8E5900467983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65C331526CB8E5900467983 /* LaunchScreen.storyboard */; };
+		C6617B4026DC5FE1000BC3DA /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6617B3F26DC5FE1000BC3DA /* InputNameViewController.swift */; };
+		C6617B4226DC6A8B000BC3DA /* InputBirthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6617B4126DC6A8B000BC3DA /* InputBirthViewController.swift */; };
+		C6617B4426DC7781000BC3DA /* ChoiceSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6617B4326DC7781000BC3DA /* ChoiceSexViewController.swift */; };
+		C6617B4626DC779A000BC3DA /* InputPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6617B4526DC779A000BC3DA /* InputPhoneViewController.swift */; };
 		C67FE01E26D48AB800E5E5BC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FE01D26D48AB800E5E5BC /* MenuViewController.swift */; };
 		C6C6BCC326D8CF72004F5D00 /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6BCC226D8CF72004F5D00 /* CreatePasswordViewController.swift */; };
 		C6E87A5426D778B90014920A /* CreateIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E87A5326D778B90014920A /* CreateIdViewController.swift */; };
@@ -36,7 +39,6 @@
 		C618E66126D724DC007C88BB /* ChoiceAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceAuthViewController.swift; sourceTree = "<group>"; };
 		C6326B1826CC8189006257F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C6326B1A26CC84CB006257F3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		C6326B1C26CC84D8006257F3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C6326B1E26CC84FF006257F3 /* FindIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdViewController.swift; sourceTree = "<group>"; };
 		C6326B2026CC852E006257F3 /* FindPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwViewController.swift; sourceTree = "<group>"; };
 		C6326B2426CCC502006257F3 /* Create_AccountDTO_REQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_AccountDTO_REQ.swift; sourceTree = "<group>"; };
@@ -54,6 +56,10 @@
 		C65C331326CB8E5900467983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C65C331626CB8E5900467983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C65C331826CB8E5900467983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6617B3F26DC5FE1000BC3DA /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
+		C6617B4126DC6A8B000BC3DA /* InputBirthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBirthViewController.swift; sourceTree = "<group>"; };
+		C6617B4326DC7781000BC3DA /* ChoiceSexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceSexViewController.swift; sourceTree = "<group>"; };
+		C6617B4526DC779A000BC3DA /* InputPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPhoneViewController.swift; sourceTree = "<group>"; };
 		C67FE01D26D48AB800E5E5BC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C6C6BCC226D8CF72004F5D00 /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		C6E87A5226D75DE00014920A /* Practice-Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practice-Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,12 +185,15 @@
 			children = (
 				C6326B2026CC852E006257F3 /* FindPwViewController.swift */,
 				C6326B1E26CC84FF006257F3 /* FindIdViewController.swift */,
-				C6326B1C26CC84D8006257F3 /* SignUpViewController.swift */,
 				C6326B1826CC8189006257F3 /* LoginViewController.swift */,
 				C64C94C426D6105200B133B0 /* AccountInfoViewController.swift */,
 				C618E66126D724DC007C88BB /* ChoiceAuthViewController.swift */,
 				C6E87A5326D778B90014920A /* CreateIdViewController.swift */,
 				C6C6BCC226D8CF72004F5D00 /* CreatePasswordViewController.swift */,
+				C6617B3F26DC5FE1000BC3DA /* InputNameViewController.swift */,
+				C6617B4126DC6A8B000BC3DA /* InputBirthViewController.swift */,
+				C6617B4326DC7781000BC3DA /* ChoiceSexViewController.swift */,
+				C6617B4526DC779A000BC3DA /* InputPhoneViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -288,7 +297,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64C94C026D5D7CC00B133B0 /* MenuCell.swift in Sources */,
-				C6326B1D26CC84D8006257F3 /* SignUpViewController.swift in Sources */,
 				C6326B2526CCC502006257F3 /* Create_AccountDTO_REQ.swift in Sources */,
 				C65C331226CB8E5800467983 /* Practice_Health.xcdatamodeld in Sources */,
 				C6326B3126CCE84F006257F3 /* LoginRequest.swift in Sources */,
@@ -299,11 +307,15 @@
 				C65C330826CB8E5800467983 /* AppDelegate.swift in Sources */,
 				C6326B1926CC8189006257F3 /* LoginViewController.swift in Sources */,
 				C67FE01E26D48AB800E5E5BC /* MenuViewController.swift in Sources */,
+				C6617B4026DC5FE1000BC3DA /* InputNameViewController.swift in Sources */,
+				C6617B4226DC6A8B000BC3DA /* InputBirthViewController.swift in Sources */,
 				C6326B2126CC852E006257F3 /* FindPwViewController.swift in Sources */,
 				C6C6BCC326D8CF72004F5D00 /* CreatePasswordViewController.swift in Sources */,
 				C6326B1F26CC84FF006257F3 /* FindIdViewController.swift in Sources */,
 				C65C330A26CB8E5800467983 /* SceneDelegate.swift in Sources */,
 				C6326B2F26CCE81E006257F3 /* Login_AccountDTO_REQ.swift in Sources */,
+				C6617B4626DC779A000BC3DA /* InputPhoneViewController.swift in Sources */,
+				C6617B4426DC7781000BC3DA /* ChoiceSexViewController.swift in Sources */,
 				C6326B1B26CC84CB006257F3 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

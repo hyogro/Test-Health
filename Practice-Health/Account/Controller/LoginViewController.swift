@@ -24,13 +24,14 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        self.tabBarController?.tabBar.isHidden = true
+        
         /* view를 띄우기 전에 로그인 정보가 있다면 자동 로그인 및 토큰 발급 */
         if let userId = UserDefaults.standard.string(forKey: "userId") {
             let password = UserDefaults.standard.string(forKey: "password")!
             let param = ["userId" : userId, "password" : password]
             let url = "https://fapi.leescode.com/account/login"
             loginRequestPost(url: url, param: param, userId: userId, password: password, view: self)
-            NSLog("\(userId)")
         }
     }
     
@@ -39,6 +40,7 @@ class LoginViewController: UIViewController {
         /* ID, PW 텍스트 필드에 안내문자 세팅 */
         idTf.placeholder = "Email ID"
         pwTf.placeholder = "Password"
+        self.title = "로그인"
         
         super.viewDidLoad()
     }

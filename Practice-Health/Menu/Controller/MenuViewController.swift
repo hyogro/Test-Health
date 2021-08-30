@@ -14,7 +14,7 @@ class MenuViewController: UITableViewController {
     // MARK: - Override Method
     
     override func viewWillAppear(_ animated: Bool) {
-            
+        self.tabBarController?.tabBar.isHidden = false
         tableView.reloadData()
     }
     

@@ -18,7 +18,7 @@ class ChoiceAuthViewController: UIViewController {
     
     // MARK: - Property
 
-    var authority: String = ""
+    var request = Create_AccountDTO_REQ()
     
     // MARK: - Override Method
     
@@ -34,10 +34,10 @@ class ChoiceAuthViewController: UIViewController {
         
         if choiceAuth.selectedSegmentIndex == 0 {
             goCreateIdBtn.setTitle("수강생으로 가입하기", for: .normal)
-            authority = "ROLE_MEMBERSHIP"
+            request.authority = "ROLE_MEMBERSHIP"
         } else {
             goCreateIdBtn.setTitle("강사로 가입하기", for: .normal)
-            authority = "ROLE_TRAINER"
+            request.authority = "ROLE_TRAINER"
         }
         goCreateIdBtn.isEnabled = true
     }
@@ -47,7 +47,7 @@ class ChoiceAuthViewController: UIViewController {
         
         let civc = self.storyboard!.instantiateViewController(withIdentifier: "CreateIdVC") as! CreateIdViewController
         
-        civc.authority = authority
+        civc.request = request
         self.navigationController!.pushViewController(civc, animated: true)
     }
 }

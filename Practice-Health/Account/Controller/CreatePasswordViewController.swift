@@ -19,9 +19,7 @@ class CreatePasswordViewController: UIViewController {
     
     // MARK: - Property
     
-    var authority: String = ""
-    var userId: String = ""
-    var password: String = ""
+    var request = Create_AccountDTO_REQ()
     
     // MARK: - Override Method
     
@@ -37,7 +35,13 @@ class CreatePasswordViewController: UIViewController {
     @IBAction func clickGoInputNameBtn(_ sender: UIButton) {
         
         if pwTf.text!.count >= 4 && pwTf.text == checkPwTf.text {
-            password = pwTf.text!
+            request.password = pwTf.text!
+            
+            let invc = self.storyboard?.instantiateViewController(withIdentifier: "InputNameVC") as! InputNameViewController
+            
+            invc.request = request
+            
+            self.navigationController?.pushViewController(invc, animated: true)
         } else {
             alert("입력한 비밀번호를 확인해주세요.", view: self)
         }

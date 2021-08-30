@@ -8,11 +8,11 @@
 import Foundation
 
 class Create_AccountDTO_REQ {
-    var userId: String?
-    var password: String?
-    var name: String?
-    var phone: String?
-    var birthDate: String?
-    var sex: String?
-    var authority: String?
+    var userId: String? = nil
+    var password: String? = nil
+    var name: String? = nil
+    var phone: String? = nil
+    var birthDate: String? = nil
+    var sex: String? = nil
+    var authority: String? = nil
 }

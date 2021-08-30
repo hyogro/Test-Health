@@ -21,9 +21,7 @@ class CreateIdViewController: UIViewController {
     
     // MARK: - Property
     
-    var authority: String = ""
-    var userId: String = ""
-    var auth: Bool = false
+    var request = Create_AccountDTO_REQ()
     
     // MARK: - Override Method
     
@@ -35,7 +33,7 @@ class CreateIdViewController: UIViewController {
         authBtn.isHidden = true
         goCreatePasswordBtn.isEnabled = false
         
-        if authority == "ROLE_MEMBERSHIP" {
+        if request.authority == "ROLE_MEMBERSHIP" {
             describeType.text = "수강생으로 가입합니다."
         } else {
             describeType.text = "강사로 가입합니다."
@@ -64,9 +62,10 @@ class CreateIdViewController: UIViewController {
     /* 인증번호 입력 후 인증하기 클릭 */
     @IBAction func clickDoAuth(_ sender: UIButton) {
         if authTf.text == "123" {
-            userId = idTf.text!
-            auth = true
+            request.userId = idTf.text!
+            
             alert("인증되었습니다.", view: self)
+            
             authTf.isHidden = true
             authBtn.isHidden = true
             goCreatePasswordBtn.isEnabled = true
@@ -81,8 +80,7 @@ class CreateIdViewController: UIViewController {
     @IBAction func clickGoCreatePasswordBtn(_ sender: UIButton) {
         let cpvc = self.storyboard!.instantiateViewController(withIdentifier: "CreatePWVC") as! CreatePasswordViewController
         
-        cpvc.authority = authority
-        cpvc.userId = userId
+        cpvc.request = request
         
         self.navigationController!.pushViewController(cpvc, animated: true)
     }
