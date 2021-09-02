@@ -106,3 +106,15 @@ extension UIViewController {
         self.view.endEditing(true)
     }
 }
+
+// MARK: - 텍스트필드 정규식
+
+extension String {
+    
+    func validateEmail() -> Bool {
+        let emailReg = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let predicate = NSPredicate(format:"SELF MATCHES %@", emailReg)
+        return predicate.evaluate(with: self)
+    }
+}

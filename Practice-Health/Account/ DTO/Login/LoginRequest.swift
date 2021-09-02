@@ -39,12 +39,8 @@ func loginRequestPost(url: String, param: [String: String?], userId: String, pas
                     var expiresSeconds = data!.value(forKey: "accessTokenExpiresIn") as? Double
                     let addTime: Double = 1000 * 60 * 60 * 9
                     expiresSeconds = expiresSeconds! + addTime
-                    NSLog("\(String(describing: expiresSeconds))")
                     let accessTokenExpiresIn = Date(timeIntervalSince1970: expiresSeconds! / 1000)
-                    NSLog("granType : \(grantType ?? "값이 없습니다.")")
-                    NSLog("accessToken : \(accessToken ?? "값이 없습니다.")")
-                    NSLog("refreshToken : \(refreshToken ?? "값이 없습니다.")")
-                    NSLog("accessTokenExpiresIn : \(String(describing: accessTokenExpiresIn))")
+
                     
                     NSLog("로그인 성공! \(String(describing: message!))")
                     
@@ -55,7 +51,7 @@ func loginRequestPost(url: String, param: [String: String?], userId: String, pas
                     UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
                     UserDefaults.standard.set(accessTokenExpiresIn, forKey: "accessTokenExpiresIn")
                     
-                    view.presentingViewController?.dismiss(animated: true)
+                    view.navigationController?.popViewController(animated: true)
                 } else {
                     NSLog("로그인 실패 \(String(describing: message!))")
                     view.alert("ID와 비밀번호를 확인해주세요.", view: view)

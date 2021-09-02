@@ -18,6 +18,8 @@ class CreateIdViewController: UIViewController {
     @IBOutlet var authBtn: UIButton!
     @IBOutlet var goCreatePasswordBtn: UIButton!
     @IBOutlet var describeType: UILabel!
+    @IBOutlet var validationLabel: UILabel!
+    @IBOutlet var goAuthBtn: UIButton!
     
     // MARK: - Property
     
@@ -32,6 +34,7 @@ class CreateIdViewController: UIViewController {
         authTf.isHidden = true
         authBtn.isHidden = true
         goCreatePasswordBtn.isEnabled = false
+        goAuthBtn.isEnabled = false
         
         if request.authority == "ROLE_MEMBERSHIP" {
             describeType.text = "수강생으로 가입합니다."
@@ -41,12 +44,19 @@ class CreateIdViewController: UIViewController {
         
         self.title = "Email ID 생성"
         
+        self.idTf.addTarget(self, action: #selector(self.validateIdTf(_:)), for: .editingChanged)
+        
     }
     
     // MARK: - Action Method
     
     /* ID 입력 후 인증요청 버튼 클릭 */
     @IBAction func clickGoAuth(_ sender: UIButton) {
+        let eId: String = idTf.text!
+        
+        let url = "https://fapi.leescode.com/account/exists/id/\(eId)"
+        checkIdRequestGet(url: url, view: self)
+        
         if idTf.text != "" {
             authTf.isHidden = false
             authBtn.isHidden = false
@@ -83,6 +93,24 @@ class CreateIdViewController: UIViewController {
         cpvc.request = request
         
         self.navigationController!.pushViewController(cpvc, animated: true)
+    }
+    
+    // MARK: = Objc Method
+    
+    @objc func validateIdTf(_ sender: Any?) {
+        if idTf.text == "" {
+            goAuthBtn.isEnabled = false
+            validationLabel.isHidden = true
+        } else {
+            if idTf.text!.validateEmail() == false {
+                validationLabel!.isHidden = false
+                validationLabel!.text = "Email을 입력해주세요."
+                goAuthBtn.isEnabled = false
+            } else {
+                validationLabel.isHidden = true
+                goAuthBtn.isEnabled = true
+            }
+        }
     }
 }
 

@@ -10,7 +10,11 @@ import UIKit
 // MARK: Menu Page Main Code
 
 class MenuViewController: UITableViewController {
-
+    
+    // MARK: Outlet Property
+    
+    @IBOutlet var logoutBtn: UIButton!
+    
     // MARK: - Override Method
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +40,14 @@ class MenuViewController: UITableViewController {
         
         if UserDefaults.standard.string(forKey: "userId") != nil {
             cell.userInfo.text = UserDefaults.standard.string(forKey: "userId")
+        } else {
+            cell.userInfo.text = "로그인을 해주세요!"
+        }
+        
+        if cell.userInfo.text == "로그인을 해주세요!" {
+            logoutBtn.isHidden = true
+        } else {
+            logoutBtn.isHidden = false
         }
         
         return cell
@@ -60,6 +72,21 @@ class MenuViewController: UITableViewController {
         }
     }
     
-    // MARK: - User Defined Method
+    // MARK: - Override Method
     
+    @IBAction func clickLogoutBtn(_ sender: UIButton) {
+        
+        UserDefaults.standard.removeObject(forKey: "userId")
+        UserDefaults.standard.removeObject(forKey: "password")
+        UserDefaults.standard.removeObject(forKey: "grantType")
+        UserDefaults.standard.removeObject(forKey: "accessToken")
+        UserDefaults.standard.removeObject(forKey: "refreshToken")
+        UserDefaults.standard.removeObject(forKey: "accessTokenExpiresIn")
+        
+        NSLog("\(UserDefaults.standard.string(forKey: "userId") ?? "없음")")
+        
+        tableView.reloadRows(at: tableView.indexPathsForVisibleRows!, with: .none)
+        
+        logoutBtn.isHidden = true
+    }
 }

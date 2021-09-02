@@ -18,6 +18,7 @@
 		C6326B3126CCE84F006257F3 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6326B3026CCE84F006257F3 /* LoginRequest.swift */; };
 		C6326B3626CCFC49006257F3 /* darknight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6326B3526CCFC49006257F3 /* darknight.jpg */; };
 		C6326B3826CCFCB8006257F3 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = C6326B3726CCFCB8006257F3 /* apple.png */; };
+		C645C9A126DDBF0C0088692D /* FinishSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645C9A026DDBF0C0088692D /* FinishSignupViewController.swift */; };
 		C64C94C026D5D7CC00B133B0 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C94BF26D5D7CC00B133B0 /* MenuCell.swift */; };
 		C64C94C526D6105200B133B0 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C94C426D6105200B133B0 /* AccountInfoViewController.swift */; };
 		C65C330826CB8E5800467983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C330726CB8E5800467983 /* AppDelegate.swift */; };
@@ -31,6 +32,8 @@
 		C6617B4426DC7781000BC3DA /* ChoiceSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6617B4326DC7781000BC3DA /* ChoiceSexViewController.swift */; };
 		C6617B4626DC779A000BC3DA /* InputPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6617B4526DC779A000BC3DA /* InputPhoneViewController.swift */; };
 		C67FE01E26D48AB800E5E5BC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FE01D26D48AB800E5E5BC /* MenuViewController.swift */; };
+		C6A545AE26DF398700972D6A /* InputDetailTrainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A545AD26DF398700972D6A /* InputDetailTrainerViewController.swift */; };
+		C6A545B026DF3AA000972D6A /* InputDetailMembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A545AF26DF3AA000972D6A /* InputDetailMembershipViewController.swift */; };
 		C6C6BCC326D8CF72004F5D00 /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6BCC226D8CF72004F5D00 /* CreatePasswordViewController.swift */; };
 		C6E87A5426D778B90014920A /* CreateIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E87A5326D778B90014920A /* CreateIdViewController.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +50,7 @@
 		C6326B3026CCE84F006257F3 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		C6326B3526CCFC49006257F3 /* darknight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = darknight.jpg; sourceTree = "<group>"; };
 		C6326B3726CCFCB8006257F3 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
+		C645C9A026DDBF0C0088692D /* FinishSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishSignupViewController.swift; sourceTree = "<group>"; };
 		C64C94BF26D5D7CC00B133B0 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		C64C94C426D6105200B133B0 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
 		C65C330726CB8E5800467983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		C6617B4326DC7781000BC3DA /* ChoiceSexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceSexViewController.swift; sourceTree = "<group>"; };
 		C6617B4526DC779A000BC3DA /* InputPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPhoneViewController.swift; sourceTree = "<group>"; };
 		C67FE01D26D48AB800E5E5BC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C6A545AD26DF398700972D6A /* InputDetailTrainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDetailTrainerViewController.swift; sourceTree = "<group>"; };
+		C6A545AF26DF3AA000972D6A /* InputDetailMembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDetailMembershipViewController.swift; sourceTree = "<group>"; };
 		C6C6BCC226D8CF72004F5D00 /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		C6E87A5226D75DE00014920A /* Practice-Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practice-Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E87A5326D778B90014920A /* CreateIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +200,9 @@
 				C6617B4126DC6A8B000BC3DA /* InputBirthViewController.swift */,
 				C6617B4326DC7781000BC3DA /* ChoiceSexViewController.swift */,
 				C6617B4526DC779A000BC3DA /* InputPhoneViewController.swift */,
+				C645C9A026DDBF0C0088692D /* FinishSignupViewController.swift */,
+				C6A545AD26DF398700972D6A /* InputDetailTrainerViewController.swift */,
+				C6A545AF26DF3AA000972D6A /* InputDetailMembershipViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -296,6 +305,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6A545AE26DF398700972D6A /* InputDetailTrainerViewController.swift in Sources */,
+				C645C9A126DDBF0C0088692D /* FinishSignupViewController.swift in Sources */,
+				C6A545B026DF3AA000972D6A /* InputDetailMembershipViewController.swift in Sources */,
 				C64C94C026D5D7CC00B133B0 /* MenuCell.swift in Sources */,
 				C6326B2526CCC502006257F3 /* Create_AccountDTO_REQ.swift in Sources */,
 				C65C331226CB8E5800467983 /* Practice_Health.xcdatamodeld in Sources */,

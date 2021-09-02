@@ -30,12 +30,14 @@ class InputPhoneViewController: UIViewController {
         authTf.isHidden = true
         doAuthBtn.isHidden = true
         finishSignupBtn.isEnabled = false
+        
+        self.phoneTf.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     // MARK: - Action Method
 
     @IBAction func clickGoAuthBtn(_ sender: UIButton) {
-        if phoneTf.text!.count == 11 {
+        if phoneTf.text!.count == 13 {
             alert("인증번호를 입력해주세요.", view: self)
             
             authTf.placeholder = "인증번호를 입력해주세요"
@@ -69,7 +71,29 @@ class InputPhoneViewController: UIViewController {
     
     @IBAction func clickFinishSingupBtn(_ sender: UIButton) {
         
+        let param = ["userId" : request.userId, "password" : request.password, "name" : request.name, "phone" : request.phone, "birthDate" : request.birthDate, "sex" : request.sex, "authority" : request.authority]
+        
+        let url = "https://fapi.leescode.com/user"
+        signupRequestPost(url: url, param: param, view: self)
+        
+        let fsvc = self.storyboard!.instantiateViewController(withIdentifier: "FinishSignupVC") as! FinishSignupViewController
+        
+        fsvc.loginInfo.userId = request.userId
+        fsvc.loginInfo.password = request.password
+        fsvc.authority = request.authority!
+        
+        self.navigationController?.pushViewController(fsvc, animated: true)
+        
     }
+    
+    // MARK: - Objc Method
+    
+    @objc func textFieldDidChange(_ sender: Any?) {
+        if phoneTf.text!.count == 3 || phoneTf.text!.count == 8 {
+            phoneTf.text = phoneTf.text! + "-"
+        }
+    }
+    
 }
 
 // MARK: - 키패드 제어 Extension
@@ -83,5 +107,4 @@ extension InputPhoneViewController {
         
         self.view.endEditing(true)
     }
-    
 }

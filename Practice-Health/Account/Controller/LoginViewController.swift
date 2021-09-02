@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
         guard let password = pwTf?.text else { return }
         
         /* ID, Password 입력값이 길이 최소 조건 충족 시 로그인 API로 리퀘스트를 보냄 */
-        if userId.count == 11 && password.count >= 3 {
+        if userId.count >= 8 && password.count >= 3 {
             loginInfo.userId = userId
             loginInfo.password = password
             

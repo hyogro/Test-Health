@@ -29,6 +29,7 @@ class InputBirthViewController: UIViewController {
     
     @IBAction func clickSkipBirthBtn(_ sender: UIButton) {
         let csvc = defineTarget()
+        request.birthDate = nil
         
         csvc.request = request
         
@@ -50,7 +51,7 @@ class InputBirthViewController: UIViewController {
     
     @IBAction func clickGoChoiceSexBtn(_ sender: UIButton) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-mm-dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         request.birthDate = formatter.string(from: datePicker.date)
         
         let csvc = defineTarget()

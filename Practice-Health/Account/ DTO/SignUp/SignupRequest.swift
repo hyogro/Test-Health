@@ -50,3 +50,26 @@ func signupRequestPost(url: String, param: [String: String?], view: UIViewContro
     
     task.resume()
 }
+
+func checkIdRequestGet(url: String, view: UIViewController) {
+    let requestUrl = URL(string: url)
+    var request = URLRequest(url: requestUrl!)
+    
+    request.httpMethod = "GET"
+    
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        if let e = error {
+            NSLog("An error has occurred : \(e.localizedDescription)")
+            return
+        }
+        
+        DispatchQueue.main.async {
+            do {
+                let check: String = String(decoding: data!, as: UTF8.self)
+                
+            }
+        }
+    }
+    
+    task.resume()
+}
