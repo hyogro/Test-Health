@@ -17,6 +17,8 @@ class InputPhoneViewController: UIViewController {
     @IBOutlet var authTf: UITextField!
     @IBOutlet var doAuthBtn: UIButton!
     @IBOutlet var finishSignupBtn: UIButton!
+    @IBOutlet var validateLabel: UILabel!
+    @IBOutlet var goAuthBtn: UIButton!
     
     // MARK: - Property
     
@@ -30,6 +32,8 @@ class InputPhoneViewController: UIViewController {
         authTf.isHidden = true
         doAuthBtn.isHidden = true
         finishSignupBtn.isEnabled = false
+        validateLabel.isHidden = true
+        goAuthBtn.isEnabled = false
         
         self.phoneTf.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
@@ -89,8 +93,22 @@ class InputPhoneViewController: UIViewController {
     // MARK: - Objc Method
     
     @objc func textFieldDidChange(_ sender: Any?) {
-        if phoneTf.text!.count == 3 || phoneTf.text!.count == 8 {
-            phoneTf.text = phoneTf.text! + "-"
+        if phoneTf.text == "" {
+            validateLabel.isHidden = true
+            goAuthBtn.isEnabled = false
+        } else {
+            if phoneTf.text!.count == 3 || phoneTf.text!.count == 8 {
+                phoneTf.text = phoneTf.text! + "-"
+            }
+            
+            if phoneTf.text!.validatePhone() == false {
+                validateLabel.isHidden = false
+                validateLabel.text = "연락처를 입력해주세요."
+                goAuthBtn.isEnabled = false
+            } else {
+                validateLabel.isHidden = true
+                goAuthBtn.isEnabled = true
+            }
         }
     }
     

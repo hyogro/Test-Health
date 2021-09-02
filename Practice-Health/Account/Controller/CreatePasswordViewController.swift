@@ -15,6 +15,8 @@ class CreatePasswordViewController: UIViewController {
     
     @IBOutlet var pwTf: UITextField!
     @IBOutlet var checkPwTf: UITextField!
+    @IBOutlet var validatePwLabel: UILabel!
+    @IBOutlet var validateCheckPwLabel: UILabel!
     
     
     // MARK: - Property
@@ -27,10 +29,11 @@ class CreatePasswordViewController: UIViewController {
         self.title = "비밀번호 설정"
         pwTf.placeholder = "비밀번호"
         checkPwTf.placeholder = "비밀번호 확인"
+        self.pwTf.addTarget(self, action: #selector(self.validatePwTf(_:)), for: .editingChanged)
+        self.checkPwTf.addTarget(self, action: #selector(self.validateCheckPwTf(_:)), for: .editingChanged)
     }
     
     // MARK: - Action Method
-    
     
     @IBAction func clickGoInputNameBtn(_ sender: UIButton) {
         
@@ -47,6 +50,33 @@ class CreatePasswordViewController: UIViewController {
         }
     }
     
+    // MARK: - Objc Method
+    
+    @objc func validatePwTf(_ sender: Any?) {
+        
+        if pwTf.text! == "" {
+            validatePwLabel.isHidden = false
+        } else {
+            if pwTf.text!.validatePassword() == false {
+                validatePwLabel.isHidden = false
+            } else {
+                validatePwLabel.isHidden = true
+            }
+        }
+    }
+    
+    @objc func validateCheckPwTf(_ sender: Any?) {
+        
+        if checkPwTf.text! == "" {
+            validateCheckPwLabel.isHidden = false
+        } else {
+            if pwTf.text! == checkPwTf.text! {
+                validateCheckPwLabel.isHidden = true
+            } else {
+                validateCheckPwLabel.isHidden = false
+            }
+        }
+    }
 }
 
 // MARK: - 키패드 제어 Extension

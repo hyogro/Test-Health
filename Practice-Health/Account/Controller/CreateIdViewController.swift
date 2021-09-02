@@ -95,7 +95,7 @@ class CreateIdViewController: UIViewController {
         self.navigationController!.pushViewController(cpvc, animated: true)
     }
     
-    // MARK: = Objc Method
+    // MARK: - Objc Method
     
     @objc func validateIdTf(_ sender: Any?) {
         if idTf.text == "" {

@@ -101,7 +101,7 @@ extension UIViewController {
 
 extension UIViewController {
     
-    /* 빈 공간 터치하면 키패드 내려감 */
+    /* 스크롤뷰에서 빈 공간 터치하면 키패드 내려감 */
     @objc func tapOtherPlace(sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
@@ -111,10 +111,27 @@ extension UIViewController {
 
 extension String {
     
+    /* 이메일 정규식 */
     func validateEmail() -> Bool {
         let emailReg = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
         let predicate = NSPredicate(format:"SELF MATCHES %@", emailReg)
+        
+        return predicate.evaluate(with: self)
+    }
+    
+    /* 연락처 정규식 */
+    func validatePhone() -> Bool {
+        let phoneReg = "[0-9]{3}+-[0-9]{4}+-[0-9]{4}"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", phoneReg)
+        
+        return predicate.evaluate(with: self)
+    }
+    
+    /* 비밀번호 정규식 */
+    func validatePassword() -> Bool {
+        let passwordReg = ("(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!_@$%^&+=]).{8,20}")
+        let predicate = NSPredicate(format: "SELF MATCHES %@", passwordReg)
+        
         return predicate.evaluate(with: self)
     }
 }
