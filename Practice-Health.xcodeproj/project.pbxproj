@@ -36,6 +36,8 @@
 		C6A545B026DF3AA000972D6A /* InputDetailMembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A545AF26DF3AA000972D6A /* InputDetailMembershipViewController.swift */; };
 		C6C6BCC326D8CF72004F5D00 /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6BCC226D8CF72004F5D00 /* CreatePasswordViewController.swift */; };
 		C6E87A5426D778B90014920A /* CreateIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E87A5326D778B90014920A /* CreateIdViewController.swift */; };
+		C6F0620F26E5B49900D7DC04 /* GetInfo_Account_RES.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F0620E26E5B49900D7DC04 /* GetInfo_Account_RES.swift */; };
+		C6F0621126E5B51100D7DC04 /* GetInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F0621026E5B51100D7DC04 /* GetInfoRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		C6C6BCC226D8CF72004F5D00 /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		C6E87A5226D75DE00014920A /* Practice-Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practice-Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E87A5326D778B90014920A /* CreateIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdViewController.swift; sourceTree = "<group>"; };
+		C6F0620E26E5B49900D7DC04 /* GetInfo_Account_RES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfo_Account_RES.swift; sourceTree = "<group>"; };
+		C6F0621026E5B51100D7DC04 /* GetInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		C6326B2226CCC428006257F3 /*  DTO */ = {
 			isa = PBXGroup;
 			children = (
+				C6F0620D26E5B47300D7DC04 /* GetInfo */,
 				C6326B2D26CCE804006257F3 /* Login */,
 				C6326B2326CCC439006257F3 /* SignUp */,
 			);
@@ -232,6 +237,15 @@
 			path = "Practice-Health";
 			sourceTree = "<group>";
 		};
+		C6F0620D26E5B47300D7DC04 /* GetInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C6F0620E26E5B49900D7DC04 /* GetInfo_Account_RES.swift */,
+				C6F0621026E5B51100D7DC04 /* GetInfoRequest.swift */,
+			);
+			path = GetInfo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +323,7 @@
 				C645C9A126DDBF0C0088692D /* FinishSignupViewController.swift in Sources */,
 				C6A545B026DF3AA000972D6A /* InputDetailMembershipViewController.swift in Sources */,
 				C64C94C026D5D7CC00B133B0 /* MenuCell.swift in Sources */,
+				C6F0621126E5B51100D7DC04 /* GetInfoRequest.swift in Sources */,
 				C6326B2526CCC502006257F3 /* Create_AccountDTO_REQ.swift in Sources */,
 				C65C331226CB8E5800467983 /* Practice_Health.xcdatamodeld in Sources */,
 				C6326B3126CCE84F006257F3 /* LoginRequest.swift in Sources */,
@@ -324,6 +339,7 @@
 				C6326B2126CC852E006257F3 /* FindPwViewController.swift in Sources */,
 				C6C6BCC326D8CF72004F5D00 /* CreatePasswordViewController.swift in Sources */,
 				C6326B1F26CC84FF006257F3 /* FindIdViewController.swift in Sources */,
+				C6F0620F26E5B49900D7DC04 /* GetInfo_Account_RES.swift in Sources */,
 				C65C330A26CB8E5800467983 /* SceneDelegate.swift in Sources */,
 				C6326B2F26CCE81E006257F3 /* Login_AccountDTO_REQ.swift in Sources */,
 				C6617B4626DC779A000BC3DA /* InputPhoneViewController.swift in Sources */,

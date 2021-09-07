@@ -10,26 +10,31 @@ import UIKit
 // MARK: Account Info Main Code
 
 class AccountInfoViewController: UIViewController {
+    
+    // MARK: Outlet Property
+    
+    @IBOutlet var idTf: UITextField!
+    @IBOutlet var nameTf: UITextField!
+    @IBOutlet var phoneTf: UITextField!
+    @IBOutlet var birthDateTf: UITextField!
+    @IBOutlet var sexTf: UITextField!
+    
+    // MARK: - Property
 
     // MARK: - Override Method
     
-    override func viewWillAppear(_ animated: Bool) {
-        if UserDefaults.standard.string(forKey: "userId") == nil {
-            let alert = UIAlertController(title: "로그인", message: "로그인이 필요한 페이지입니다.", preferredStyle: .alert)
-            
-            let ok = UIAlertAction(title: "확인", style: .cancel) { (_) in
-                self.navigationController?.popViewController(animated: true)
-            }
-            
-            alert.addAction(ok)
-            
-            self.present(alert, animated: false)
+    override func viewWillAppear(_ animated: Bool) {        
+        let url = "https://fapi.leescode.com/user"
+        GetInfoRequest(url: url, view: self) { (info) in
+            self.idTf.text = info.userId
+            self.nameTf.text = info.name
+            self.phoneTf.text = info.phone
+            self.birthDateTf.text = info.birthDate
+            self.sexTf.text = info.sex
         }
     }
     
     override func viewDidLoad() {
         self.title = "내 정보 보기"
-
     }
-
 }

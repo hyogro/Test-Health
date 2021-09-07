@@ -38,7 +38,7 @@ class MenuViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell") as! MenuCell
         
-        if UserDefaults.standard.string(forKey: "userId") != nil {
+        if UserDefaults.standard.string(forKey: "accessToken") != nil {
             cell.userInfo.text = UserDefaults.standard.string(forKey: "userId")
         } else {
             cell.userInfo.text = "로그인을 해주세요!"
@@ -57,7 +57,7 @@ class MenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         /* 로그인 정보가 있을 경우 계정 정보 VC로 이동. 그 외의 경우 로그인 VC로 이동 */
-        if UserDefaults.standard.string(forKey: "userId") != nil {
+        if UserDefaults.standard.string(forKey: "accessToken") != nil {
             
             let aivc = self.storyboard!.instantiateViewController(withIdentifier: "AccountInfoVC")
             
@@ -77,14 +77,8 @@ class MenuViewController: UITableViewController {
     @IBAction func clickLogoutBtn(_ sender: UIButton) {
         
         UserDefaults.standard.removeObject(forKey: "userId")
-        UserDefaults.standard.removeObject(forKey: "password")
         UserDefaults.standard.removeObject(forKey: "grantType")
         UserDefaults.standard.removeObject(forKey: "accessToken")
-        UserDefaults.standard.removeObject(forKey: "refreshToken")
-        UserDefaults.standard.removeObject(forKey: "accessTokenExpiresIn")
-        
-        NSLog("\(UserDefaults.standard.string(forKey: "userId") ?? "없음")")
-        
         tableView.reloadRows(at: tableView.indexPathsForVisibleRows!, with: .none)
         
         logoutBtn.isHidden = true

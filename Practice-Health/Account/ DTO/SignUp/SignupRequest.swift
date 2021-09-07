@@ -23,6 +23,7 @@ func signupRequestPost(url: String, param: [String: String?], view: UIViewContro
             NSLog("An error has occurred : \(e.localizedDescription)")
             return
         }
+        
         DispatchQueue.main.async {
             do {
                 let object = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
@@ -51,7 +52,7 @@ func signupRequestPost(url: String, param: [String: String?], view: UIViewContro
     task.resume()
 }
 
-func checkIdRequestGet(url: String, view: UIViewController) {
+func checkIdRequest(url: String, view: UIViewController, completion: @escaping(_ check: String) -> Void){
     let requestUrl = URL(string: url)
     var request = URLRequest(url: requestUrl!)
     
@@ -64,10 +65,8 @@ func checkIdRequestGet(url: String, view: UIViewController) {
         }
         
         DispatchQueue.main.async {
-            do {
-                let check: String = String(decoding: data!, as: UTF8.self)
-                
-            }
+            completion(String(decoding: data!, as: UTF8.self))
+            NSLog(String(decoding: data!, as: UTF8.self))
         }
     }
     

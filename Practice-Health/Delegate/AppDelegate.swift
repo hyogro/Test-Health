@@ -91,9 +91,7 @@ extension UIViewController {
         
         controller.addAction(UIAlertAction(title: "확인", style: .cancel))
         
-        DispatchQueue.main.async {
-            view.present(controller, animated: false)
-        }
+        view.present(controller, animated: false)
     }
 }
 

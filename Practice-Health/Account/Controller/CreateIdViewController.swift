@@ -55,18 +55,19 @@ class CreateIdViewController: UIViewController {
         let eId: String = idTf.text!
         
         let url = "https://fapi.leescode.com/account/exists/id/\(eId)"
-        checkIdRequestGet(url: url, view: self)
-        
-        if idTf.text != "" {
-            authTf.isHidden = false
-            authBtn.isHidden = false
-            authTf.placeholder = "인증번호를 입력해주세요."
-            alert("인증번호를 입력해주세요.", view: self)
-            idTf.resignFirstResponder()
-            authTf.becomeFirstResponder()
-        } else {
-            alert("Email ID를 확인해주세요.", view: self)
+        checkIdRequest(url: url, view: self) { (check) in
+            if check == "false" {
+                self.authTf.isHidden = false
+                self.authBtn.isHidden = false
+                self.authTf.placeholder = "인증번호를 입력해주세요."
+                self.alert("인증번호를 입력해주세요.", view: self)
+                self.idTf.resignFirstResponder()
+                self.authTf.becomeFirstResponder()
+            } else {
+                self.alert("Email ID를 확인해주세요.", view: self)
+            }
         }
+
     }
     
     /* 인증번호 입력 후 인증하기 클릭 */

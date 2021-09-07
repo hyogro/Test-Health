@@ -35,21 +35,12 @@ func loginRequestPost(url: String, param: [String: String?], userId: String, pas
                     let data = jsonObject["data"] as? NSDictionary
                     let grantType = data!.value(forKey: "grantType") as? String
                     let accessToken = data!.value(forKey: "accessToken") as? String
-                    let refreshToken = data!.value(forKey: "refreshToken") as? String
-                    var expiresSeconds = data!.value(forKey: "accessTokenExpiresIn") as? Double
-                    let addTime: Double = 1000 * 60 * 60 * 9
-                    expiresSeconds = expiresSeconds! + addTime
-                    let accessTokenExpiresIn = Date(timeIntervalSince1970: expiresSeconds! / 1000)
 
-                    
                     NSLog("로그인 성공! \(String(describing: message!))")
                     
                     UserDefaults.standard.set(userId, forKey: "userId")
-                    UserDefaults.standard.set(password, forKey: "password")
                     UserDefaults.standard.set(grantType, forKey: "grantType")
                     UserDefaults.standard.set(accessToken, forKey: "accessToken")
-                    UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
-                    UserDefaults.standard.set(accessTokenExpiresIn, forKey: "accessTokenExpiresIn")
                     
                     view.navigationController?.popViewController(animated: true)
                 } else {
