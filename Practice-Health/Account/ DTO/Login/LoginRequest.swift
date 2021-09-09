@@ -7,7 +7,7 @@
 import UIKit
 import Foundation
 
-func loginRequestPost(url: String, param: [String: String?], userId: String, password: String, view: UIViewController) {
+func loginRequestPost(url: String, param: [String: String], completion: @escaping(_ code: String) -> Void) {
     let requestUrl = URL(string: url)
     var request = URLRequest(url: requestUrl!)
     let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
@@ -38,18 +38,15 @@ func loginRequestPost(url: String, param: [String: String?], userId: String, pas
 
                     NSLog("로그인 성공! \(String(describing: message!))")
                     
-                    UserDefaults.standard.set(userId, forKey: "userId")
                     UserDefaults.standard.set(grantType, forKey: "grantType")
                     UserDefaults.standard.set(accessToken, forKey: "accessToken")
                     
-                    view.navigationController?.popViewController(animated: true)
+                    completion(code!)
                 } else {
                     NSLog("로그인 실패 \(String(describing: message!))")
-                    view.alert("ID와 비밀번호를 확인해주세요.", view: view)
                 }
             } catch let e as NSError {
                 NSLog("로그인 실패... \(e.localizedDescription)")
-                view.alert("로그인 실패하였습니다.", view: view)
             }
         }
     }

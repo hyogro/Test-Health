@@ -15,9 +15,6 @@ class AccountInfoViewController: UIViewController {
     
     @IBOutlet var idTf: UITextField!
     @IBOutlet var nameTf: UITextField!
-    @IBOutlet var phoneTf: UITextField!
-    @IBOutlet var birthDateTf: UITextField!
-    @IBOutlet var sexTf: UITextField!
     
     // MARK: - Property
 
@@ -28,9 +25,6 @@ class AccountInfoViewController: UIViewController {
         GetInfoRequest(url: url, view: self) { (info) in
             self.idTf.text = info.userId
             self.nameTf.text = info.name
-            self.phoneTf.text = info.phone
-            self.birthDateTf.text = info.birthDate
-            self.sexTf.text = info.sex
         }
     }
     

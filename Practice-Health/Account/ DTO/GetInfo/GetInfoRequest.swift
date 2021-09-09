@@ -13,10 +13,13 @@ func GetInfoRequest(url: String, view: UIViewController, completion: @escaping(_
     var request = URLRequest(url: requestUrl!)
     
     let accessToken = UserDefaults.standard.string(forKey: "accessToken")
+    let grantType = UserDefaults.standard.string(forKey: "grantType")
+    NSLog(grantType!)
+    NSLog(accessToken!)
     
     request.httpMethod = "GET"
     request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-    request.addValue("Bearer " + accessToken!, forHTTPHeaderField: "token")
+    request.addValue(grantType! + accessToken!, forHTTPHeaderField: "token")
     
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
         if let e = error {
@@ -38,9 +41,6 @@ func GetInfoRequest(url: String, view: UIViewController, completion: @escaping(_
                     var info = GetInfo_Account_RES()
                     info.userId = userInfo!.value(forKey: "userId") as? String
                     info.name = userInfo!.value(forKey: "name") as? String
-                    info.phone = userInfo!.value(forKey: "phone") as? String
-                    info.birthDate = userInfo!.value(forKey: "birthDate") as? String
-                    info.sex = userInfo!.value(forKey: "sex") as? String
                     
                     completion(info)
                 } else {

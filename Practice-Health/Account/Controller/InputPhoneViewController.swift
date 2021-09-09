@@ -16,13 +16,15 @@ class InputPhoneViewController: UIViewController {
     @IBOutlet var phoneTf: UITextField!
     @IBOutlet var authTf: UITextField!
     @IBOutlet var doAuthBtn: UIButton!
-    @IBOutlet var finishSignupBtn: UIButton!
+    @IBOutlet var goInputNameBtn: UIButton!
     @IBOutlet var validateLabel: UILabel!
     @IBOutlet var goAuthBtn: UIButton!
     
     // MARK: - Property
     
     var request = Create_AccountDTO_REQ()
+    var phone: String = ""
+    var inputCode: String = ""
     
     // MARK: - Override Method
 
@@ -31,7 +33,7 @@ class InputPhoneViewController: UIViewController {
         phoneTf.placeholder = "'-' 빼고 입력해주세요"
         authTf.isHidden = true
         doAuthBtn.isHidden = true
-        finishSignupBtn.isEnabled = false
+        goInputNameBtn.isEnabled = false
         validateLabel.isHidden = true
         goAuthBtn.isEnabled = false
         
@@ -42,51 +44,51 @@ class InputPhoneViewController: UIViewController {
 
     @IBAction func clickGoAuthBtn(_ sender: UIButton) {
         if phoneTf.text!.count == 13 {
-            alert("인증번호를 입력해주세요.", view: self)
+            phone = phoneTf.text!
+            let param = ["phone": phone]
+            let url = "https://fapi.leescode.com/account/phone/cert"
             
-            authTf.placeholder = "인증번호를 입력해주세요"
-            authTf.isHidden = false
-            doAuthBtn.isHidden = false
-            
-            phoneTf.resignFirstResponder()
-            authTf.becomeFirstResponder()
+            certifyPhoneRequestPost(url: url, param: param) { (certifyCode) in
+                if certifyCode != "" {
+                    self.alert("인증번호를 입력해주세요.", view: self)
+                    
+                    self.authTf.placeholder = "인증번호를 입력해주세요"
+                    self.authTf.isHidden = false
+                    self.doAuthBtn.isHidden = false
+                    
+                    self.phoneTf.resignFirstResponder()
+                    self.authTf.becomeFirstResponder()
+                } else {
+                    self.alert("인증번호 요청 실패", view: self)
+                }
+            }
         } else {
-            alert("연락처를 확인해주세요.", view: self)
+            self.alert("연락처를 확인해주세요.", view: self)
         }
     }
     
     @IBAction func clickDoAuthBtn(_ sender: UIButton) {
-        if authTf.text! == "123" {
-            authTf.resignFirstResponder()
-            
-            alert("인증되었습니다!", view: self)
-            
-            finishSignupBtn.setTitle("회원가입 완료!", for: .normal)
-            finishSignupBtn.isEnabled = true
-            authTf.isHidden = true
-            doAuthBtn.isHidden = true
-            
-            request.phone = phoneTf.text!
-            
-        } else {
-            alert("인증번호를 확인해주세요.", view: self)
+        inputCode = authTf.text!
+        if inputCode != "" {
+            let param = ["phone": phone, "number": inputCode]
+            let url = "https://fapi.leescode.com/account/phone/verify"
+            verifyCodeRequestPost(url: url, param: param) { (verifyPhone) in
+                if verifyPhone.userId != nil {
+                    self.alert("인증 성공", view: self)
+                    self.request.userId = verifyPhone.userId
+                    self.goInputNameBtn.isEnabled = true
+                    self.goInputNameBtn.setTitle("계속하기", for: .normal)
+                }
+            }
         }
     }
     
-    @IBAction func clickFinishSingupBtn(_ sender: UIButton) {
+    @IBAction func clickGoInputNameBtn(_ sender: UIButton) {
+        let invc = self.storyboard!.instantiateViewController(withIdentifier: "InputNameVC") as! InputNameViewController
         
-        let param = ["userId" : request.userId, "password" : request.password, "name" : request.name, "phone" : request.phone, "birthDate" : request.birthDate, "sex" : request.sex, "authority" : request.authority]
+        invc.request = request
         
-        let url = "https://fapi.leescode.com/user"
-        signupRequestPost(url: url, param: param, view: self)
-        
-        let fsvc = self.storyboard!.instantiateViewController(withIdentifier: "FinishSignupVC") as! FinishSignupViewController
-        
-        fsvc.loginInfo.userId = request.userId
-        fsvc.loginInfo.password = request.password
-        fsvc.authority = request.authority!
-        
-        self.navigationController?.pushViewController(fsvc, animated: true)
+        self.navigationController?.pushViewController(invc, animated: true)
         
     }
     

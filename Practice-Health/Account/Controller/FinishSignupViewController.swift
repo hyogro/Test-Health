@@ -13,16 +13,20 @@ class FinishSignupViewController: UIViewController {
 
     // MARK: Property
     
-    var loginInfo = Login_AccountDTO_REQ()
+    var userId: String?
     var authority: String = ""
     
     // MARK: - Override Method
     
     override func viewWillAppear(_ animated: Bool) {
-        let param = ["userId" : loginInfo.userId, "password" : loginInfo.password]
         let url = "https://fapi.leescode.com/account/login"
+        let param = ["userId": userId!]
         
-        loginRequestPost(url: url, param: param, userId: loginInfo.userId!, password: loginInfo.password!, view: self)
+        loginRequestPost(url: url, param: param) { (code) in
+            if code == "A2000" {
+                UserDefaults.standard.set(self.userId, forKey: "userId")
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -33,23 +37,22 @@ class FinishSignupViewController: UIViewController {
     // MARK: - Action Method
     
     @IBAction func goInputInfoBtn(_ sender: UIButton) {
-        var idvc: UIViewController
+        var target: String = ""
         
         if authority == "ROLE_MEMBERSHIP" {
-            idvc = self.storyboard!.instantiateViewController(withIdentifier: "InputDetailMembershipVC")
-        } else {
-            idvc = self.storyboard!.instantiateViewController(withIdentifier: "InputDetailTrainerVC")
-        }
+            target = "InputDetailMembershipVC"
+        } else if authority == "ROLE_TRAINER" {
+            target = "InputDetailTrainerVC"
+        } else { return }
+        
+        let idvc = self.storyboard!.instantiateViewController(withIdentifier: target)
         
         self.navigationController?.pushViewController(idvc, animated: true)
         
     }
     
-    
     @IBAction func endSignupBtn(_ sender: UIButton) {
         
-        let mvc = self.storyboard!.instantiateViewController(withIdentifier: "MenuVC")
-        
-        self.navigationController?.popToViewController(mvc, animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

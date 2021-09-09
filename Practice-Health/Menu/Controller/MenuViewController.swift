@@ -65,14 +65,14 @@ class MenuViewController: UITableViewController {
             
         } else {
             
-            let lvc = self.storyboard!.instantiateViewController(withIdentifier: "LoginVC")
+            let ipvc = self.storyboard!.instantiateViewController(withIdentifier: "InputPhoneVC")
             
-            self.navigationController?.pushViewController(lvc, animated: true)
+            self.navigationController?.pushViewController(ipvc, animated: true)
             
         }
     }
     
-    // MARK: - Override Method
+    // MARK: - Action Method
     
     @IBAction func clickLogoutBtn(_ sender: UIButton) {
         
